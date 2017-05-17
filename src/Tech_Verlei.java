@@ -1,5 +1,5 @@
 /**
- * Created by noah on 17.05.17.
+ * Created by Noah Waldner on 17.05.17.
  */
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
