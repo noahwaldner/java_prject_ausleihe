@@ -10,10 +10,12 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+
 import net.miginfocom.swing.MigLayout;
 import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.RowSpec;
+
 import java.awt.FlowLayout;
 import javax.swing.SpringLayout;
 import javax.swing.GroupLayout;
@@ -31,9 +33,11 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Tech_Verlei extends JFrame {
+public class Tech_Verlei extends JFrame implements ActionListener {
 
     private JPanel contentPane;
+
+    private JButton btn_close, btn_inventar, btn_ausleihe, btn_info, btn_rueckgabe;
 
     /**
      * Launch the application.
@@ -70,70 +74,26 @@ public class Tech_Verlei extends JFrame {
         JPanel panel_home = new JPanel();
 
 
-        JButton btn_close = new JButton("Beenden");
+        btn_close = new JButton("Beenden");
         btn_close.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        JButton btn_inventar = new JButton("Inventar");
+        btn_inventar = new JButton("Inventar");
         btn_inventar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        JButton btn_ausleihe = new JButton("Ausleihen");
-        JButton btn_info = new JButton("Info");
+        btn_ausleihe = new JButton("Ausleihen");
+        btn_info = new JButton("Info");
         btn_info.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        JButton btn_rueckgabe = new JButton("Rückgabe");
+        btn_rueckgabe = new JButton("Rückgabe");
         btn_rueckgabe.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
 
-        btn_ausleihe.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-                btn_ausleihe.setBackground(new Color(176, 196, 222));
-                btn_rueckgabe.setBackground(new Color(119, 136, 153));
-                btn_inventar.setBackground(new Color(119, 136, 153));
-                btn_info.setBackground(new Color(119, 136, 153));
-                btn_close.setBackground(new Color(119, 136, 153));
+        btn_ausleihe.addActionListener(this);
 
+        btn_rueckgabe.addActionListener(this);
 
+        btn_inventar.addActionListener(this);
 
-            }
-        });
+        btn_info.addActionListener(this);
 
-
-        btn_rueckgabe.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                btn_ausleihe.setBackground(new Color(119, 136, 153));
-                btn_rueckgabe.setBackground(new Color(176, 196, 222));
-                btn_inventar.setBackground(new Color(119, 136, 153));
-                btn_info.setBackground(new Color(119, 136, 153));
-                btn_close.setBackground(new Color(119, 136, 153));
-            }
-        });
-
-
-        btn_inventar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                btn_ausleihe.setBackground(new Color(119, 136, 153));
-                btn_rueckgabe.setBackground(new Color(119, 136, 153));
-                btn_inventar.setBackground(new Color(176, 196, 222));
-                btn_info.setBackground(new Color(119, 136, 153));
-                btn_close.setBackground(new Color(119, 136, 153));
-            }
-        });
-
-
-        btn_info.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                btn_ausleihe.setBackground(new Color(119, 136, 153));
-                btn_rueckgabe.setBackground(new Color(119, 136, 153));
-                btn_inventar.setBackground(new Color(119, 136, 153));
-                btn_info.setBackground(new Color(176, 196, 222));
-                btn_close.setBackground(new Color(119, 136, 153));
-
-            }
-        });
-
-        btn_close.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                //testweise um mit button das programm zu beenden
-                System.exit(1);
-            }
-        });
+        btn_close.addActionListener(this);
 
 
         btn_ausleihe.setFocusTraversalPolicyProvider(true);
@@ -198,11 +158,6 @@ public class Tech_Verlei extends JFrame {
         btn_close.setBorder(null);
         btn_close.setBackground(new Color(119, 136, 153));
 
-
-
-
-
-
         GroupLayout gl_Sidepanel = new GroupLayout(Sidepanel);
         gl_Sidepanel.setHorizontalGroup(
                 gl_Sidepanel.createParallelGroup(Alignment.TRAILING)
@@ -256,4 +211,48 @@ public class Tech_Verlei extends JFrame {
         panel_home.setLayout(gl_panel_home);
         setUndecorated(true);
     }
+
+    
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Object src = e.getSource();
+        System.out.print("exit");
+
+        if (src == btn_close) {
+            System.out.print("exit2");
+            //testweise um mit button das programm zu beenden
+            System.exit(0);
+        }
+        if (src == btn_info) {
+            btn_ausleihe.setBackground(new Color(119, 136, 153));
+            btn_rueckgabe.setBackground(new Color(119, 136, 153));
+            btn_inventar.setBackground(new Color(119, 136, 153));
+            btn_info.setBackground(new Color(176, 196, 222));
+            btn_close.setBackground(new Color(119, 136, 153));
+        }
+        if (src == btn_inventar) {
+            btn_ausleihe.setBackground(new Color(119, 136, 153));
+            btn_rueckgabe.setBackground(new Color(119, 136, 153));
+            btn_inventar.setBackground(new Color(176, 196, 222));
+            btn_info.setBackground(new Color(119, 136, 153));
+            btn_close.setBackground(new Color(119, 136, 153));
+        }
+        if (src == btn_rueckgabe) {
+            btn_ausleihe.setBackground(new Color(119, 136, 153));
+            btn_rueckgabe.setBackground(new Color(176, 196, 222));
+            btn_inventar.setBackground(new Color(119, 136, 153));
+            btn_info.setBackground(new Color(119, 136, 153));
+            btn_close.setBackground(new Color(119, 136, 153));
+        }
+        if (src == btn_ausleihe) {
+            btn_ausleihe.setBackground(new Color(176, 196, 222));
+            btn_rueckgabe.setBackground(new Color(119, 136, 153));
+            btn_inventar.setBackground(new Color(119, 136, 153));
+            btn_info.setBackground(new Color(119, 136, 153));
+            btn_close.setBackground(new Color(119, 136, 153));
+
+        }
+
+    }
+
 }
