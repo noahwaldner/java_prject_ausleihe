@@ -68,22 +68,24 @@ public class Tech_Verlei extends JFrame {
         JPanel panel_home = new JPanel();
 
 
+        JButton btn_close = new JButton("Beenden");
+        btn_close.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        JButton btn_inventar = new JButton("Inventar");
+        btn_inventar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        JButton btn_ausleihe = new JButton("Ausleihen");
+        JButton btn_info = new JButton("Info");
+        btn_info.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        JButton btn_rueckgabe = new JButton("Rückgabe");
+        btn_rueckgabe.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
 
-        JButton bttn_inventar = new JButton("Inventar");
-        bttn_inventar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        JButton bttn_ausleihe = new JButton("Ausleihen");
-        JButton bttn_info = new JButton("Info");
-        bttn_info.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        JButton bttn_rueckgabe = new JButton("Rückgabe");
-        bttn_rueckgabe.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-
-        bttn_ausleihe.addActionListener(new ActionListener() {
+        btn_ausleihe.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                bttn_ausleihe.setBackground(new Color(176, 196, 222));
-                bttn_rueckgabe.setBackground(new Color(119, 136, 153));
-                bttn_inventar.setBackground(new Color(119, 136, 153));
-                bttn_info .setBackground(new Color(119, 136, 153));
+                btn_ausleihe.setBackground(new Color(176, 196, 222));
+                btn_rueckgabe.setBackground(new Color(119, 136, 153));
+                btn_inventar.setBackground(new Color(119, 136, 153));
+                btn_info.setBackground(new Color(119, 136, 153));
+                btn_close.setBackground(new Color(119, 136, 153));
 
 
 
@@ -91,53 +93,59 @@ public class Tech_Verlei extends JFrame {
         });
 
 
-
-        bttn_rueckgabe.addActionListener(new ActionListener() {
+        btn_rueckgabe.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                bttn_ausleihe.setBackground(new Color(119, 136, 153));
-                bttn_rueckgabe.setBackground(new Color(176, 196, 222));
-                bttn_inventar.setBackground(new Color(119, 136, 153));
-                bttn_info .setBackground(new Color(119, 136, 153));
+                btn_ausleihe.setBackground(new Color(119, 136, 153));
+                btn_rueckgabe.setBackground(new Color(176, 196, 222));
+                btn_inventar.setBackground(new Color(119, 136, 153));
+                btn_info.setBackground(new Color(119, 136, 153));
+                btn_close.setBackground(new Color(119, 136, 153));
             }
         });
 
 
-        bttn_inventar.addActionListener(new ActionListener() {
+        btn_inventar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                bttn_ausleihe.setBackground(new Color(119, 136, 153));
-                bttn_rueckgabe.setBackground(new Color(119, 136, 153));
-                bttn_inventar.setBackground(new Color(176, 196, 222));
-                bttn_info .setBackground(new Color(119, 136, 153));
+                btn_ausleihe.setBackground(new Color(119, 136, 153));
+                btn_rueckgabe.setBackground(new Color(119, 136, 153));
+                btn_inventar.setBackground(new Color(176, 196, 222));
+                btn_info.setBackground(new Color(119, 136, 153));
+                btn_close.setBackground(new Color(119, 136, 153));
             }
         });
 
 
-        bttn_info.addActionListener(new ActionListener() {
+        btn_info.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                bttn_ausleihe.setBackground(new Color(119, 136, 153));
-                bttn_rueckgabe.setBackground(new Color(119, 136, 153));
-                bttn_inventar.setBackground(new Color(119, 136, 153));
-                bttn_info .setBackground(new Color(176, 196, 222));
+                btn_ausleihe.setBackground(new Color(119, 136, 153));
+                btn_rueckgabe.setBackground(new Color(119, 136, 153));
+                btn_inventar.setBackground(new Color(119, 136, 153));
+                btn_info.setBackground(new Color(176, 196, 222));
+                btn_close.setBackground(new Color(119, 136, 153));
+
+            }
+        });
+
+        btn_close.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                //testweise um mit button das programm zu beenden
+                System.exit(1);
             }
         });
 
 
+        btn_ausleihe.setFocusTraversalPolicyProvider(true);
+        btn_ausleihe.setFocusable(false);
+        btn_ausleihe.setFocusTraversalKeysEnabled(false);
+        btn_ausleihe.setHorizontalAlignment(SwingConstants.LEFT);
+        btn_ausleihe.setBorder(null);
+        btn_ausleihe.setBackground(new Color(119, 136, 153));
+        btn_ausleihe.setIcon(new ImageIcon("C:\\Users\\super\\Desktop\\Cloakroom_26px.png"));
+        btn_ausleihe.setToolTipText("Hier kann die Technik an den Kunden verliehen werden.");
 
-
-
-
-        bttn_ausleihe.setFocusTraversalPolicyProvider(true);
-        bttn_ausleihe.setFocusable(false);
-        bttn_ausleihe.setFocusTraversalKeysEnabled(false);
-        bttn_ausleihe.setHorizontalAlignment(SwingConstants.LEFT);
-        bttn_ausleihe.setBorder(null);
-        bttn_ausleihe.setBackground(new Color(119, 136, 153));
-        bttn_ausleihe.setIcon(new ImageIcon("C:\\Users\\super\\Desktop\\Cloakroom_26px.png"));
-        bttn_ausleihe.setToolTipText("Hier kann die Technik an den Kunden verliehen werden.");
-
-        bttn_ausleihe.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        bttn_ausleihe.setFont(new Font("Tahoma", Font.BOLD, 14));
-        bttn_ausleihe.setForeground(Color.WHITE);
+        btn_ausleihe.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        btn_ausleihe.setFont(new Font("Tahoma", Font.BOLD, 14));
+        btn_ausleihe.setForeground(Color.WHITE);
 
         JLabel lblTechverleih = new JLabel("Techverleih");
         lblTechverleih.setToolTipText("Willkommen im Techverleih bitte w\u00E4hlen Sie ihren Men\u00FC Punkt");
@@ -146,37 +154,47 @@ public class Tech_Verlei extends JFrame {
         lblTechverleih.setHorizontalAlignment(SwingConstants.LEFT);
 
 
-        bttn_rueckgabe.setToolTipText("Hier kann die Technik an den Kunden verliehen werden.");
-        bttn_rueckgabe.setHorizontalAlignment(SwingConstants.LEFT);
-        bttn_rueckgabe.setForeground(Color.WHITE);
-        bttn_rueckgabe.setFont(new Font("Tahoma", Font.BOLD, 14));
-        bttn_rueckgabe.setFocusable(false);
-        bttn_rueckgabe.setFocusTraversalPolicyProvider(true);
-        bttn_rueckgabe.setFocusTraversalKeysEnabled(false);
-        bttn_rueckgabe.setBorder(null);
-        bttn_rueckgabe.setBackground(new Color(119, 136, 153));
+        btn_rueckgabe.setToolTipText("Hier kann die Technik an den Kunden verliehen werden.");
+        btn_rueckgabe.setHorizontalAlignment(SwingConstants.LEFT);
+        btn_rueckgabe.setForeground(Color.WHITE);
+        btn_rueckgabe.setFont(new Font("Tahoma", Font.BOLD, 14));
+        btn_rueckgabe.setFocusable(false);
+        btn_rueckgabe.setFocusTraversalPolicyProvider(true);
+        btn_rueckgabe.setFocusTraversalKeysEnabled(false);
+        btn_rueckgabe.setBorder(null);
+        btn_rueckgabe.setBackground(new Color(119, 136, 153));
 
 
-        bttn_inventar.setToolTipText("Hier kann die Technik an den Kunden verliehen werden.");
-        bttn_inventar.setHorizontalAlignment(SwingConstants.LEFT);
-        bttn_inventar.setForeground(Color.WHITE);
-        bttn_inventar.setFont(new Font("Tahoma", Font.BOLD, 14));
-        bttn_inventar.setFocusable(false);
-        bttn_inventar.setFocusTraversalPolicyProvider(true);
-        bttn_inventar.setFocusTraversalKeysEnabled(false);
-        bttn_inventar.setBorder(null);
-        bttn_inventar.setBackground(new Color(119, 136, 153));
+        btn_inventar.setToolTipText("Hier kann die Technik an den Kunden verliehen werden.");
+        btn_inventar.setHorizontalAlignment(SwingConstants.LEFT);
+        btn_inventar.setForeground(Color.WHITE);
+        btn_inventar.setFont(new Font("Tahoma", Font.BOLD, 14));
+        btn_inventar.setFocusable(false);
+        btn_inventar.setFocusTraversalPolicyProvider(true);
+        btn_inventar.setFocusTraversalKeysEnabled(false);
+        btn_inventar.setBorder(null);
+        btn_inventar.setBackground(new Color(119, 136, 153));
 
 
-        bttn_info.setToolTipText("Hier kann die Technik an den Kunden verliehen werden.");
-        bttn_info.setHorizontalAlignment(SwingConstants.LEFT);
-        bttn_info.setForeground(Color.WHITE);
-        bttn_info.setFont(new Font("Tahoma", Font.BOLD, 14));
-        bttn_info.setFocusable(false);
-        bttn_info.setFocusTraversalPolicyProvider(true);
-        bttn_info.setFocusTraversalKeysEnabled(false);
-        bttn_info.setBorder(null);
-        bttn_info.setBackground(new Color(119, 136, 153));
+        btn_info.setToolTipText("Hier kann die Technik an den Kunden verliehen werden.");
+        btn_info.setHorizontalAlignment(SwingConstants.LEFT);
+        btn_info.setForeground(Color.WHITE);
+        btn_info.setFont(new Font("Tahoma", Font.BOLD, 14));
+        btn_info.setFocusable(false);
+        btn_info.setFocusTraversalPolicyProvider(true);
+        btn_info.setFocusTraversalKeysEnabled(false);
+        btn_info.setBorder(null);
+        btn_info.setBackground(new Color(119, 136, 153));
+
+        btn_close.setToolTipText("Hier kann das Programm beendet werden.");
+        btn_close.setHorizontalAlignment(SwingConstants.LEFT);
+        btn_close.setForeground(Color.WHITE);
+        btn_close.setFont(new Font("Tahoma", Font.BOLD, 14));
+        btn_close.setFocusable(false);
+        btn_close.setFocusTraversalPolicyProvider(true);
+        btn_close.setFocusTraversalKeysEnabled(false);
+        btn_close.setBorder(null);
+        btn_close.setBackground(new Color(119, 136, 153));
 
 
 
@@ -190,26 +208,32 @@ public class Tech_Verlei extends JFrame {
                                 .addContainerGap()
                                 .addGroup(gl_Sidepanel.createParallelGroup(Alignment.LEADING)
                                         .addComponent(lblTechverleih, GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
-                                        .addComponent(bttn_ausleihe, GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
-                                        .addComponent(bttn_rueckgabe, GroupLayout.PREFERRED_SIZE, 227, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(bttn_inventar, GroupLayout.PREFERRED_SIZE, 227, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(bttn_info, GroupLayout.PREFERRED_SIZE, 227, GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap())
-        );
+                                        .addComponent(btn_ausleihe, GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
+                                        .addComponent(btn_rueckgabe, GroupLayout.PREFERRED_SIZE, 227, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btn_inventar, GroupLayout.PREFERRED_SIZE, 227, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btn_info, GroupLayout.PREFERRED_SIZE, 227, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btn_close, GroupLayout.PREFERRED_SIZE, 227, GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap()));
+
+
         gl_Sidepanel.setVerticalGroup(
                 gl_Sidepanel.createParallelGroup(Alignment.LEADING)
                         .addGroup(gl_Sidepanel.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(lblTechverleih, GroupLayout.PREFERRED_SIZE, 59, GroupLayout.PREFERRED_SIZE)
                                 .addGap(115)
-                                .addComponent(bttn_ausleihe, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btn_ausleihe, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)
                                 .addGap(19)
-                                .addComponent(bttn_rueckgabe, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btn_rueckgabe, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)
                                 .addGap(18)
-                                .addComponent(bttn_inventar, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btn_inventar, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)
                                 .addGap(18)
-                                .addComponent(bttn_info, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btn_info, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)
+                                .addGap(18)
+                                .addGap(18)
+                                .addComponent(btn_close, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(184, Short.MAX_VALUE))
+
         );
         Sidepanel.setLayout(gl_Sidepanel);
 
