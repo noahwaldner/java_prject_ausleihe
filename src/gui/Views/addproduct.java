@@ -1,4 +1,4 @@
-package Views;
+package gui.Views;
 
 import javax.swing.*;
 
@@ -7,18 +7,17 @@ import javax.swing.*;
  */
 public class addproduct extends JPanel {
 
-    JPanel addprod_panel = new JPanel();
+    JPanel panel = new JPanel();
 
     public addproduct() {
 
 
-
-        addprod_panel.setBounds(244, 0, 656, 600);
+        panel.setBounds(244, 0, 656, 600);
 
 
         JLabel lblNewLabel = new JLabel("New label");
         lblNewLabel.setIcon(new ImageIcon("C:\\Users\\super\\Desktop\\2.jpg"));
-        GroupLayout gl_panel_home = new GroupLayout(addprod_panel);
+        GroupLayout gl_panel_home = new GroupLayout(panel);
         gl_panel_home.setHorizontalGroup(
                 gl_panel_home.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 656, GroupLayout.PREFERRED_SIZE)
@@ -27,7 +26,7 @@ public class addproduct extends JPanel {
                 gl_panel_home.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addComponent(lblNewLabel)
         );
-        addprod_panel.setLayout(gl_panel_home);
+        panel.setLayout(gl_panel_home);
 
 
 

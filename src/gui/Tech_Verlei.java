@@ -3,6 +3,8 @@ package gui; /**
  * Edited by Noah Waldner on 17.05.17.
  */
 
+import gui.Views.addproduct;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -60,9 +62,10 @@ public class Tech_Verlei extends JFrame implements ActionListener {
 
         Sidepanel.setBackground(new Color(119, 136, 153));
 
-        this.
 
-        contentPane.add(panel_home);
+        JPanel addprod = new addproduct();
+
+        contentPane.add(addprod);
 
 
         btn_close = new JButton("Beenden");

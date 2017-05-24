@@ -9,7 +9,7 @@ public class geraet extends produkt {
 
     private boolean mobile;
 
-    public boolean isMobile() {
+    public boolean getMobile() {
         return mobile;
     }
 
