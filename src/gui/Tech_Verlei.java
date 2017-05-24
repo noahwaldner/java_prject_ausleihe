@@ -96,12 +96,12 @@ public class Tech_Verlei extends JFrame implements ActionListener {
         btn_ausleihe.setHorizontalAlignment(SwingConstants.LEFT);
         btn_ausleihe.setBorder(null);
         btn_ausleihe.setBackground(new Color(119, 136, 153));
-        btn_ausleihe.setIcon(new ImageIcon("C:\\Users\\super\\Desktop\\Cloakroom_26px.png"));
+        btn_ausleihe.setIcon(new ImageIcon("Bilder/icons8-buy.png"));
         btn_ausleihe.setToolTipText("Hier kann die Technik an den Kunden verliehen werden.");
 
         btn_ausleihe.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btn_ausleihe.setFont(new Font("Tahoma", Font.BOLD, 14));
-        btn_ausleihe.setForeground(Color.WHITE);
+        btn_ausleihe.setForeground(Color.LIGHT_GRAY);
 
         JLabel lblTechverleih = new JLabel("Techverleih");
         lblTechverleih.setToolTipText("Willkommen im Techverleih bitte w\u00E4hlen Sie ihren Men\u00FC Punkt");
@@ -112,45 +112,46 @@ public class Tech_Verlei extends JFrame implements ActionListener {
 
         btn_rueckgabe.setToolTipText("Hier kann die Technik an den Kunden verliehen werden.");
         btn_rueckgabe.setHorizontalAlignment(SwingConstants.LEFT);
-        btn_rueckgabe.setForeground(Color.WHITE);
+        btn_rueckgabe.setForeground(Color.LIGHT_GRAY);
         btn_rueckgabe.setFont(new Font("Tahoma", Font.BOLD, 14));
         btn_rueckgabe.setFocusable(false);
         btn_rueckgabe.setFocusTraversalPolicyProvider(true);
         btn_rueckgabe.setFocusTraversalKeysEnabled(false);
         btn_rueckgabe.setBorder(null);
         btn_rueckgabe.setBackground(new Color(119, 136, 153));
+        btn_rueckgabe.setIcon(new ImageIcon("Bilder/icons8-clear_shopping_cart.png"));
 
 
         btn_inventar.setToolTipText("Hier kann die Technik an den Kunden verliehen werden.");
         btn_inventar.setHorizontalAlignment(SwingConstants.LEFT);
-        btn_inventar.setForeground(Color.WHITE);
+        btn_inventar.setForeground(Color.LIGHT_GRAY);
         btn_inventar.setFont(new Font("Tahoma", Font.BOLD, 14));
         btn_inventar.setFocusable(false);
         btn_inventar.setFocusTraversalPolicyProvider(true);
         btn_inventar.setFocusTraversalKeysEnabled(false);
         btn_inventar.setBorder(null);
         btn_inventar.setBackground(new Color(119, 136, 153));
-
+        btn_inventar.setIcon(new ImageIcon("Bilder/icons8-return_purchase.png"));
 
         btn_info.setToolTipText("Hier kann die Technik an den Kunden verliehen werden.");
         btn_info.setHorizontalAlignment(SwingConstants.LEFT);
-        btn_info.setForeground(Color.WHITE);
+        btn_info.setForeground(Color.lightGray);
         btn_info.setFont(new Font("Tahoma", Font.BOLD, 14));
         btn_info.setFocusable(false);
         btn_info.setFocusTraversalPolicyProvider(true);
         btn_info.setFocusTraversalKeysEnabled(false);
         btn_info.setBorder(null);
         btn_info.setBackground(new Color(119, 136, 153));
+        btn_info.setIcon(new ImageIcon("Bilder/icons8-info.png"));
 
         btn_close.setToolTipText("Hier kann das Programm beendet werden.");
         btn_close.setHorizontalAlignment(SwingConstants.LEFT);
-        btn_close.setForeground(Color.WHITE);
+        btn_close.setForeground(Color.LIGHT_GRAY);
         btn_close.setFont(new Font("Tahoma", Font.BOLD, 14));
         btn_close.setFocusable(false);
         btn_close.setFocusTraversalPolicyProvider(true);
         btn_close.setFocusTraversalKeysEnabled(false);
-        btn_close.setBorder(null);
-        btn_close.setBackground(new Color(119, 136, 153));
+        btn_close.setIcon(new ImageIcon("Bilder/icons8-cancel.png"));
 
         GroupLayout gl_Sidepanel = new GroupLayout(Sidepanel);
         gl_Sidepanel.setHorizontalGroup(
@@ -159,7 +160,7 @@ public class Tech_Verlei extends JFrame implements ActionListener {
                                 .addContainerGap()
                                 .addGroup(gl_Sidepanel.createParallelGroup(Alignment.LEADING)
                                         .addComponent(lblTechverleih, GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
-                                        .addComponent(btn_ausleihe, GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
+                                        .addComponent(btn_ausleihe, GroupLayout.PREFERRED_SIZE, 227, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(btn_rueckgabe, GroupLayout.PREFERRED_SIZE, 227, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(btn_inventar, GroupLayout.PREFERRED_SIZE, 227, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(btn_info, GroupLayout.PREFERRED_SIZE, 227, GroupLayout.PREFERRED_SIZE)
@@ -172,16 +173,16 @@ public class Tech_Verlei extends JFrame implements ActionListener {
                         .addGroup(gl_Sidepanel.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(lblTechverleih, GroupLayout.PREFERRED_SIZE, 59, GroupLayout.PREFERRED_SIZE)
-                                .addGap(115)
+                                .addGap(70)
                                 .addComponent(btn_ausleihe, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)
-                                .addGap(19)
+                                .addGap(18)
                                 .addComponent(btn_rueckgabe, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)
                                 .addGap(18)
                                 .addComponent(btn_inventar, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)
                                 .addGap(18)
                                 .addComponent(btn_info, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)
                                 .addGap(18)
-                                .addGap(18)
+                                .addGap(170)
                                 .addComponent(btn_close, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(184, Short.MAX_VALUE))
 
