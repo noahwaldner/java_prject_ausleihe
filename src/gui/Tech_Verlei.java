@@ -4,6 +4,7 @@ package gui; /**
  */
 
 import gui.Views.addproduct;
+import gui.Views.removeproduct;
 
 import java.awt.EventQueue;
 
@@ -64,8 +65,11 @@ public class Tech_Verlei extends JFrame implements ActionListener {
 
 
         JPanel addprod = new addproduct();
+        JPanel rmvprod = new removeproduct();
 
-        contentPane.add(addprod);
+        contentPane.add(rmvprod);
+
+        contentPane.remove(rmvprod);
 
 
         btn_close = new JButton("Beenden");

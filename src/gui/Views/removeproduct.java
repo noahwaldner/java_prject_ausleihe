@@ -3,19 +3,15 @@ package gui.Views;
 import javax.swing.*;
 
 /**
- * Created by Noah Waldner on 19.05.2017.
+ * Created by noah on 24.05.17.
  */
-public class addproduct extends JPanel {
+public class removeproduct extends JPanel {
 
-
-
-    public addproduct() {
-
-
+    public removeproduct() {
         this.setBounds(244, 0, 656, 600);
 
 
-        JLabel lblNewLabel = new JLabel("New label");
+        JLabel lblNewLabel = new JLabel("New label2");
         lblNewLabel.setIcon(new ImageIcon("C:\\Users\\super\\Desktop\\2.jpg"));
         this.add(lblNewLabel);
         GroupLayout gl_panel_home = new GroupLayout(this);
@@ -28,9 +24,6 @@ public class addproduct extends JPanel {
                         .addComponent(lblNewLabel)
         );
         this.setLayout(gl_panel_home);
-
-
-
 
 
     }
