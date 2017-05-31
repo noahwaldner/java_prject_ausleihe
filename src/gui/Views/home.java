@@ -5,18 +5,18 @@ import javax.swing.*;
 /**
  * Created by Noah Waldner on 19.05.2017.
  */
-public class addproduct extends JPanel {
+public class home extends JPanel {
 
 
 
-    public addproduct() {
+    public home() {
 
 
         this.setBounds(244, 0, 656, 600);
 
 
-        JLabel lblNewLabel = new JLabel("New labelwww");
-        lblNewLabel.setIcon(new ImageIcon("C:\\Users\\super\\Desktop\\2.jpg"));
+        JLabel lblNewLabel = new JLabel("New label");
+        lblNewLabel.setIcon(new ImageIcon("Bilder/Technick.jpg"));
         this.add(lblNewLabel);
         GroupLayout gl_panel_home = new GroupLayout(this);
         gl_panel_home.setHorizontalGroup(
