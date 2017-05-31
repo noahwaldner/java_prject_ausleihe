@@ -204,6 +204,7 @@ public class Tech_Verlei extends JFrame implements ActionListener {
 
         if (src == btn_close) {
             //testweise um mit button das programm zu beenden
+            setVisible(false);
             System.exit(0);
         }
         if (src == btn_info) {
