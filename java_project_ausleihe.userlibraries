@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="jgoodies-forms-1.7.2">
+    <archive path="/Users/etienneroulet/IdeaProjects/java_project_ausleihe/libs/jgoodies-forms-1.7.2.jar" />
+  </library>
+  <library name="miglayout-3.5.5">
+    <archive path="/Users/etienneroulet/IdeaProjects/java_project_ausleihe/libs/miglayout-3.5.5.jar" />
+  </library>
+</eclipse-userlibraries>
+

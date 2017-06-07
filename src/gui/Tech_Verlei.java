@@ -3,9 +3,7 @@ package gui; /**
  * Edited by Noah Waldner on 17.05.17.
  */
 
-import gui.Views.addproduct;
-import gui.Views.home;
-import gui.Views.removeproduct;
+import gui.Views.*;
 
 import java.awt.EventQueue;
 
@@ -28,6 +26,7 @@ import java.awt.event.ActionEvent;
 public class Tech_Verlei extends JFrame implements ActionListener {
 
     private JPanel contentPane;
+    private JPanel ruckgabe, home;
 
     private JButton btn_close, btn_inventar, btn_ausleihe, btn_info, btn_rueckgabe;
 
@@ -67,7 +66,9 @@ public class Tech_Verlei extends JFrame implements ActionListener {
 
         JPanel addprod = new addproduct();
         JPanel rmvprod = new removeproduct();
-        JPanel home = new home();
+        JPanel pnl_ausleihe = new ausleihe();
+        ruckgabe = new ruckgabe();
+        home = new home();
 
 
         contentPane.add(home);
@@ -209,6 +210,7 @@ public class Tech_Verlei extends JFrame implements ActionListener {
             System.exit(0);
         }
         if (src == btn_info) {
+
             btn_ausleihe.setBackground(new Color(119, 136, 153));
             btn_rueckgabe.setBackground(new Color(119, 136, 153));
             btn_inventar.setBackground(new Color(119, 136, 153));
@@ -223,11 +225,15 @@ public class Tech_Verlei extends JFrame implements ActionListener {
             btn_close.setBackground(new Color(119, 136, 153));
         }
         if (src == btn_rueckgabe) {
-            btn_ausleihe.setBackground(new Color(119, 136, 153));
-            btn_rueckgabe.setBackground(new Color(176, 196, 222));
-            btn_inventar.setBackground(new Color(119, 136, 153));
-            btn_info.setBackground(new Color(119, 136, 153));
-            btn_close.setBackground(new Color(119, 136, 153));
+            System.out.print("removing");
+            contentPane.remove(home);
+
+            System.out.print("removed");
+
+            contentPane.add(ruckgabe);
+            System.out.print("added");
+            contentPane.revalidate();
+
         }
         if (src == btn_ausleihe) {
             btn_ausleihe.setBackground(new Color(176, 196, 222));
