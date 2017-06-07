@@ -232,7 +232,8 @@ public class Tech_Verlei extends JFrame implements ActionListener {
 
             contentPane.add(ruckgabe);
             System.out.print("added");
-            contentPane.revalidate();
+            contentPane.validate();
+            contentPane.repaint();
 
         }
         if (src == btn_ausleihe) {
