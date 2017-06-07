@@ -15,7 +15,7 @@ public class addproduct extends JPanel {
         this.setBounds(244, 0, 656, 600);
 
 
-        JLabel lblNewLabel = new JLabel("New label");
+        JLabel lblNewLabel = new JLabel("addprodukt");
         lblNewLabel.setIcon(new ImageIcon("C:\\Users\\super\\Desktop\\2.jpg"));
         this.add(lblNewLabel);
         GroupLayout gl_panel_home = new GroupLayout(this);

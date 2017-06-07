@@ -26,7 +26,7 @@ import java.awt.event.ActionEvent;
 public class Tech_Verlei extends JFrame implements ActionListener {
 
     private JPanel contentPane;
-    private JPanel ruckgabe, home;
+    private JPanel ruckgabe, home, removeproduct, add, ausleihe;
 
     private JButton btn_close, btn_inventar, btn_ausleihe, btn_info, btn_rueckgabe;
 
@@ -64,9 +64,9 @@ public class Tech_Verlei extends JFrame implements ActionListener {
         Sidepanel.setBackground(new Color(119, 136, 153));
 
 
-        JPanel addprod = new addproduct();
-        JPanel rmvprod = new removeproduct();
-        JPanel pnl_ausleihe = new ausleihe();
+        removeproduct = new removeproduct();
+        add = new addproduct();
+        ausleihe = new ausleihe();
         ruckgabe = new ruckgabe();
         home = new home();
 
@@ -150,6 +150,7 @@ public class Tech_Verlei extends JFrame implements ActionListener {
         btn_info.setBackground(new Color(119, 136, 153));
         btn_info.setIcon(new ImageIcon("Bilder/icons8-info.png"));
 
+
         btn_close.setToolTipText("Hier kann das Programm beendet werden.");
         btn_close.setHorizontalAlignment(SwingConstants.LEFT);
         btn_close.setForeground(Color.LIGHT_GRAY);
@@ -211,37 +212,42 @@ public class Tech_Verlei extends JFrame implements ActionListener {
         }
         if (src == btn_info) {
 
-            btn_ausleihe.setBackground(new Color(119, 136, 153));
-            btn_rueckgabe.setBackground(new Color(119, 136, 153));
-            btn_inventar.setBackground(new Color(119, 136, 153));
-            btn_info.setBackground(new Color(176, 196, 222));
-            btn_close.setBackground(new Color(119, 136, 153));
+            contentPane.remove(home);
+            contentPane.remove(ausleihe);
+            contentPane.remove(removeproduct);
+            contentPane.remove(add);
+            contentPane.remove(ruckgabe);
+            contentPane.add(removeproduct);
+            contentPane.validate();
+            contentPane.repaint();
         }
         if (src == btn_inventar) {
-            btn_ausleihe.setBackground(new Color(119, 136, 153));
-            btn_rueckgabe.setBackground(new Color(119, 136, 153));
-            btn_inventar.setBackground(new Color(176, 196, 222));
-            btn_info.setBackground(new Color(119, 136, 153));
-            btn_close.setBackground(new Color(119, 136, 153));
+            contentPane.remove(home);
+            contentPane.remove(ausleihe);
+            contentPane.remove(removeproduct);
+            contentPane.remove(ruckgabe);
+            contentPane.add(add);
+            contentPane.validate();
+            contentPane.repaint();
         }
         if (src == btn_rueckgabe) {
-            System.out.print("removing");
             contentPane.remove(home);
-
-            System.out.print("removed");
-
+            contentPane.remove(ausleihe);
+            contentPane.remove(add);
+            contentPane.remove(removeproduct);
             contentPane.add(ruckgabe);
-            System.out.print("added");
             contentPane.validate();
             contentPane.repaint();
 
         }
         if (src == btn_ausleihe) {
-            btn_ausleihe.setBackground(new Color(176, 196, 222));
-            btn_rueckgabe.setBackground(new Color(119, 136, 153));
-            btn_inventar.setBackground(new Color(119, 136, 153));
-            btn_info.setBackground(new Color(119, 136, 153));
-            btn_close.setBackground(new Color(119, 136, 153));
+            contentPane.remove(home);
+            contentPane.remove(ruckgabe);
+            contentPane.remove(add);
+            contentPane.remove(removeproduct);
+            contentPane.add(ausleihe);
+            contentPane.validate();
+            contentPane.repaint();
 
         }
 
