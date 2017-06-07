@@ -1,5 +1,7 @@
 package gui.Views;
 
+import functions.OrderTableModel;
+
 import javax.swing.*;
 
 /**
@@ -15,19 +17,12 @@ public class ausleihe extends JPanel {
         this.setBounds(244, 0, 656, 600);
 
 
-        JLabel lblNewLabel = new JLabel("Ausleihenlabel");
 
-        this.add(lblNewLabel);
-        GroupLayout gl_panel_home = new GroupLayout(this);
-        gl_panel_home.setHorizontalGroup(
-                gl_panel_home.createParallelGroup(GroupLayout.Alignment.LEADING)
-                        .addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 656, GroupLayout.PREFERRED_SIZE)
-        );
-        gl_panel_home.setVerticalGroup(
-                gl_panel_home.createParallelGroup(GroupLayout.Alignment.LEADING)
-                        .addComponent(lblNewLabel)
-        );
-        this.setLayout(gl_panel_home);
+        JTable table = new JTable();
+        table.setBounds(30,40,200,300);
+        JScrollPane sp=new JScrollPane(table);
+        this.add(sp);
+        table.setModel(new OrderTableModel());
 
 
 

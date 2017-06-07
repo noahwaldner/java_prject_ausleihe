@@ -26,7 +26,7 @@ import java.awt.event.ActionEvent;
 public class Tech_Verlei extends JFrame implements ActionListener {
 
     private JPanel contentPane;
-    private JPanel ruckgabe, home;
+    private JPanel ruckgabe, home, ausleihe;
 
     private JButton btn_close, btn_inventar, btn_ausleihe, btn_info, btn_rueckgabe;
 
@@ -66,12 +66,12 @@ public class Tech_Verlei extends JFrame implements ActionListener {
 
         JPanel addprod = new addproduct();
         JPanel rmvprod = new removeproduct();
-        JPanel pnl_ausleihe = new ausleihe();
+        ausleihe = new ausleihe();
         ruckgabe = new ruckgabe();
         home = new home();
 
 
-        contentPane.add(home);
+        contentPane.add(ausleihe);
 
 
         btn_close = new JButton("Beenden");
