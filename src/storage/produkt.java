@@ -14,6 +14,7 @@ public class produkt {
     private String description;
     private boolean is_prod;
     private int quantity;
+    private boolean ausgeliehen;
 
 
 
@@ -37,8 +38,18 @@ public class produkt {
 
     public void setQuantity(int quantity) { this.quantity = quantity; }
 
+    public boolean getAusgeliehen() {
+        return ausgeliehen;
+    }
 
-
+    public void ausleiheRuckgabe() {
+        if (ausgeliehen == false){
+            ausgeliehen = true;
+        }
+        else {
+            ausgeliehen = false;
+        }
+    }
 
 
     public String getName() {

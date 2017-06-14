@@ -16,10 +16,10 @@ import javax.swing.table.DefaultTableModel;
  * @version 1.0
  * @author Roger
  */
-public class OrderTableModel extends DefaultTableModel {
+public class TableModel extends DefaultTableModel {
     storage.list llist = new storage.list();
     private ArrayList<storage.produkt> list = llist.getAll();
-    String[] columnNames = {"Name", "Beschreibung"};
+    String[] columnNames = {"Name", "Beschreibung", "Ausgeliehen"};
 
 
 
@@ -48,7 +48,7 @@ public class OrderTableModel extends DefaultTableModel {
 	        case 1:
                 return String.class;
             case 2:
-                return String.class;
+                return boolean.class;
             case 3:
                 return Date.class;
 
@@ -105,6 +105,8 @@ public class OrderTableModel extends DefaultTableModel {
 		    return object.getName(); //int
 		case 1:
 		    return object.getDescription(); //Date
+        case 2:
+            return object.getAusgeliehen(); //boolean
 
 	    }
 	}
@@ -114,8 +116,16 @@ public class OrderTableModel extends DefaultTableModel {
     /**
      * Lädt die JTable neu
      */
-    public void reloadList(int customerId) {
+    public void reloadList() {
 
 	    this.fireTableDataChanged();
 
-}}
+}
+    public void getObjectbyIndex(int index){
+        this.list.get(index).ausleiheRuckgabe();
+        reloadList();
+
+
+    }
+
+}
