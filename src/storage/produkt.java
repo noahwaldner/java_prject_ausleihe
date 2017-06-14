@@ -13,7 +13,6 @@ public class produkt {
     private Date anschaffungsdatum;
     private String description;
     private boolean is_prod;
-    private int quantity;
     private boolean ausgeliehen;
 
 
@@ -36,7 +35,6 @@ public class produkt {
 
     public void getis_prod (boolean is_prod) { this.is_prod = is_prod;}
 
-    public void setQuantity(int quantity) { this.quantity = quantity; }
 
     public boolean getAusgeliehen() {
         return ausgeliehen;
@@ -69,6 +67,5 @@ public class produkt {
     }
 
     public boolean setis_prod() { return is_prod;}
-
-    public int getQuantity() { return quantity; }
+    
 }

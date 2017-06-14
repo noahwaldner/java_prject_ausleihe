@@ -26,7 +26,7 @@ import java.awt.event.ActionEvent;
 public class Tech_Verlei extends JFrame implements ActionListener {
 
     private JPanel contentPane;
-    private JPanel ruckgabe, home, löschen, add, ausleihe;
+    private JPanel all, home, löschen, add, ausleihe;
 
     private JButton btn_close, btn_inventar, btn_ausleihe, btn_löschen, btn_all;
 
@@ -67,7 +67,7 @@ public class Tech_Verlei extends JFrame implements ActionListener {
         add = new addproduct();
         löschen = new removeproduct();
         ausleihe = new ausleihe();
-        ruckgabe = new ruckgabe();
+        all = new All();
         home = new home();
 
 
@@ -215,7 +215,7 @@ public class Tech_Verlei extends JFrame implements ActionListener {
             contentPane.remove(ausleihe);
             contentPane.remove(löschen);
             contentPane.remove(add);
-            contentPane.remove(ruckgabe);
+            contentPane.remove(all);
             contentPane.add(löschen);
             contentPane.validate();
             contentPane.repaint();
@@ -225,7 +225,7 @@ public class Tech_Verlei extends JFrame implements ActionListener {
             contentPane.remove(home);
             contentPane.remove(ausleihe);
             contentPane.remove(löschen);
-            contentPane.remove(ruckgabe);
+            contentPane.remove(all);
             contentPane.add(add);
             contentPane.validate();
             contentPane.repaint();
@@ -236,7 +236,7 @@ public class Tech_Verlei extends JFrame implements ActionListener {
             contentPane.remove(ausleihe);
             contentPane.remove(add);
             contentPane.remove(löschen);
-            contentPane.add(ruckgabe);
+            contentPane.add(all);
             System.out.print("added");
             contentPane.validate();
             contentPane.repaint();
@@ -245,7 +245,7 @@ public class Tech_Verlei extends JFrame implements ActionListener {
         if (src == btn_ausleihe) {
             btn_ausleihe.setBackground(new Color(119, 136, 153));
             contentPane.remove(home);
-            contentPane.remove(ruckgabe);
+            contentPane.remove(all);
             contentPane.remove(add);
             contentPane.remove(löschen);
             contentPane.add(ausleihe);

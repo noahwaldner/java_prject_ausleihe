@@ -14,7 +14,7 @@ import static com.sun.xml.internal.fastinfoset.alphabet.BuiltInRestrictedAlphabe
  */
 public class ausleihe extends JPanel implements ActionListener{
 
-    JButton btn_action, btn_update;
+    JButton btn_action;
     JTable table;
 
 
