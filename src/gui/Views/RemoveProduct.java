@@ -10,14 +10,14 @@ import java.awt.event.ActionListener;
 /**
  * Created by noah on 24.05.17.
  */
-public class removeproduct extends JPanel implements ActionListener{
+public class RemoveProduct extends JPanel implements ActionListener{
 
     JButton btn_action;
     JTable table;
 
 
 
-    public removeproduct() {
+    public RemoveProduct() {
 
 
         this.setBounds(244, 0, 656, 600);

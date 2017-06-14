@@ -64,11 +64,11 @@ public class Tech_Verlei extends JFrame implements ActionListener {
         Sidepanel.setBackground(new Color(119, 136, 153));
 
 
-        add = new addproduct();
-        löschen = new removeproduct();
-        ausleihe = new ausleihe();
+        add = new AddProduct();
+        löschen = new RemoveProduct();
+        ausleihe = new Ausleihe();
         all = new All();
-        home = new home();
+        home = new Home();
 
 
         contentPane.add(home);
@@ -76,12 +76,12 @@ public class Tech_Verlei extends JFrame implements ActionListener {
 
         btn_close = new JButton("Beenden");
         btn_close.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btn_inventar = new JButton(" ");
+        btn_inventar = new JButton("Inventarisieren");
         btn_inventar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btn_ausleihe = new JButton("Ausleihen/R\u00FCckgabe");
-        btn_löschen = new JButton("löschen");
+        btn_löschen = new JButton("Löschen");
         btn_löschen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btn_all = new JButton("All");
+        btn_all = new JButton("Alles anzeigen");
         btn_all.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
 

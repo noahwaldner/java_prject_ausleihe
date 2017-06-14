@@ -5,11 +5,11 @@ import javax.swing.*;
 /**
  * Created by Noah Waldner on 19.05.2017.
  */
-public class home extends JPanel {
+public class Home extends JPanel {
 
 
 
-    public home() {
+    public Home() {
 
 
         this.setBounds(244, 0, 656, 600);

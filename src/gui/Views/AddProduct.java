@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 /**
  * Created by Noah Waldner on 19.05.2017.
  */
-public class addproduct extends JPanel implements ActionListener{
+public class AddProduct extends JPanel implements ActionListener{
     private JTextField textField;
     private JTextField textField_1;
     private JButton button;
@@ -21,7 +21,7 @@ public class addproduct extends JPanel implements ActionListener{
 
 
 
-    public addproduct() {
+    public AddProduct() {
 
         prodmanagement = new ProdManagement();
 

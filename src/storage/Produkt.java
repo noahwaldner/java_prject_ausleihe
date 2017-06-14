@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * Created by Noah Waldner on 19.05.2017.
  */
-public class produkt {
+public class Produkt {
 
 
     private String name;
@@ -67,5 +67,5 @@ public class produkt {
     }
 
     public boolean setis_prod() { return is_prod;}
-    
+
 }

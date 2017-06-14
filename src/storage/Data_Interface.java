@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Created by noah on 07.06.17.
  */
 public interface Data_Interface {
-    void addobject(produkt neuesprodukt);
+    void addobject(Produkt neuesprodukt);
     void removeobject(int id);
-    ArrayList<produkt> getAll();
+    ArrayList<Produkt> getAll();
 }
