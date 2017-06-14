@@ -210,7 +210,7 @@ public class Tech_Verlei extends JFrame implements ActionListener {
             System.exit(0);
         }
         if (src == btn_info) {
-
+            btn_info.setBackground(new Color(119, 136, 153));
             contentPane.remove(home);
             contentPane.remove(ausleihe);
             contentPane.remove(removeproduct);
@@ -221,6 +221,7 @@ public class Tech_Verlei extends JFrame implements ActionListener {
             contentPane.repaint();
         }
         if (src == btn_inventar) {
+            btn_inventar.setBackground(new Color(119, 136, 153));
             contentPane.remove(home);
             contentPane.remove(ausleihe);
             contentPane.remove(removeproduct);
@@ -230,6 +231,7 @@ public class Tech_Verlei extends JFrame implements ActionListener {
             contentPane.repaint();
         }
         if (src == btn_rueckgabe) {
+            btn_rueckgabe.setBackground(new Color(119, 136, 153));
             contentPane.remove(home);
             contentPane.remove(ausleihe);
             contentPane.remove(add);
@@ -241,6 +243,7 @@ public class Tech_Verlei extends JFrame implements ActionListener {
 
         }
         if (src == btn_ausleihe) {
+            btn_ausleihe.setBackground(new Color(119, 136, 153));
             contentPane.remove(home);
             contentPane.remove(ruckgabe);
             contentPane.remove(add);
