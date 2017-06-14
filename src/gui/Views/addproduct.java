@@ -90,6 +90,8 @@ public class addproduct extends JPanel implements ActionListener{
         );
         this.setLayout(gl_panel_home);
 
+        button.addActionListener(this);
+
 
 
     }
@@ -99,6 +101,8 @@ public class addproduct extends JPanel implements ActionListener{
                 Geraet neuesGeraet = new Geraet();
                 neuesGeraet.setMobile(true);
                 neuesGeraet.setName("new Added");
+                prodmanagement.addObject(neuesGeraet);
+                System.out.println("button pressed");
 
             }
 

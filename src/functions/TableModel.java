@@ -6,6 +6,8 @@
 package functions;
 
 
+import storage.List;
+
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.table.DefaultTableModel;
@@ -17,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
  * @author Roger
  */
 public class TableModel extends DefaultTableModel {
-    storage.list llist = new storage.list();
+    List llist = List.getInstance();
     private ArrayList<storage.produkt> list = llist.getAll();
     String[] columnNames = {"Name", "Beschreibung", "Ausgeliehen"};
 
