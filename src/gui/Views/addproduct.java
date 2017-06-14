@@ -1,5 +1,6 @@
 package gui.Views;
 
+import functions.ProdManagement;
 import storage.Geraet;
 
 import javax.swing.*;
@@ -16,9 +17,13 @@ public class addproduct extends JPanel implements ActionListener{
     private JTextField textField_1;
     private JButton button;
 
+    ProdManagement prodmanagement;
+
 
 
     public addproduct() {
+
+        prodmanagement = new ProdManagement();
 
 
         this.setBounds(244, 0, 656, 600);
@@ -87,15 +92,17 @@ public class addproduct extends JPanel implements ActionListener{
 
 
 
+    }
 
         public void actionPerformed(ActionEvent e){
             if (e.getSource() == button){
                 Geraet neuesGeraet = new Geraet();
-                neuesGeraet.setMobile();
+                neuesGeraet.setMobile(true);
+                neuesGeraet.setName("new Added");
+
             }
 
     }
 
 
-    }
 }
