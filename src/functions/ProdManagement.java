@@ -14,7 +14,7 @@ public class ProdManagement {
 
     public void ausleihen(int id){};
     public void addObject(storage.produkt new_product) {list.addobject(new_product); System.out.println("redirected");};
-    public void removeObject(int id){};
+    public void removeObject(produkt object){list.removeobject(object);System.out.println("Passed Management");};
 
 
 }

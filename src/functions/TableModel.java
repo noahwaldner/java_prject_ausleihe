@@ -22,6 +22,11 @@ public class TableModel extends DefaultTableModel {
     List llist = List.getInstance();
     private ArrayList<storage.produkt> list = llist.getAll();
     String[] columnNames = {"Name", "Beschreibung", "Ausgeliehen"};
+    ProdManagement prodmanagement;
+
+    public TableModel(){
+        prodmanagement = new ProdManagement();
+    }
 
 
 
@@ -123,8 +128,16 @@ public class TableModel extends DefaultTableModel {
 	    this.fireTableDataChanged();
 
 }
-    public void getObjectbyIndex(int index){
+    public void ausleiheByIndex(int index){
         this.list.get(index).ausleiheRuckgabe();
+        reloadList();
+
+
+    }
+
+    public void loeschenByIndex(int index){
+        prodmanagement.removeObject(this.list.get(index));
+        System.out.println("Passed Model");
         reloadList();
 
 

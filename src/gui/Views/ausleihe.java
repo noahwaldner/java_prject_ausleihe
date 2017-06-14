@@ -48,7 +48,7 @@ public class ausleihe extends JPanel implements ActionListener{
         public void actionPerformed(ActionEvent e){
             if (e.getSource() == btn_action){
                 if (table.getSelectedRow() != -1){
-                    ((TableModel)table.getModel()).getObjectbyIndex(table.getSelectedRow());
+                    ((TableModel)table.getModel()).ausleiheByIndex(table.getSelectedRow());
 
                 }
 

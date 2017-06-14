@@ -25,6 +25,9 @@ public class List {
         storage.add(neuesprodukt);
         System.out.println("added");
     };
-    public void removeobject(int id) {/*To Do*/};
+    public void removeobject(produkt object) {
+        storage.remove(object);
+        System.out.println("Removed");
+    };
     public ArrayList<produkt> getAll() {return storage;};
 }
