@@ -11,7 +11,7 @@ public class removeproduct extends JPanel {
         this.setBounds(244, 0, 656, 600);
 
 
-        JLabel lblNewLabel = new JLabel("New label2");
+        JLabel lblNewLabel = new JLabel("löschen");
         lblNewLabel.setIcon(new ImageIcon("C:\\Users\\super\\Desktop\\2.jpg"));
         this.add(lblNewLabel);
         GroupLayout gl_panel_home = new GroupLayout(this);
