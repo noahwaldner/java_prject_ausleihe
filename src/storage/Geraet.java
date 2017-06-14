@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * Created by aprentas on 19.05.2017.
  */
-public class geraet extends produkt {
+public class Geraet extends produkt {
 
     private boolean mobile;
 

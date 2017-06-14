@@ -1,15 +1,20 @@
 package gui.Views;
 
+import storage.Geraet;
+
 import javax.swing.*;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by Noah Waldner on 19.05.2017.
  */
-public class addproduct extends JPanel {
+public class addproduct extends JPanel implements ActionListener{
     private JTextField textField;
     private JTextField textField_1;
+    private JButton button;
 
 
 
@@ -36,7 +41,8 @@ public class addproduct extends JPanel {
 
         JLabel lblNewLabel_2 = new JLabel("New label");
 
-        JButton button = new JButton("add");
+        button = new JButton("add");
+
         GroupLayout gl_panel_home = new GroupLayout(this);
         gl_panel_home.setHorizontalGroup(
                 gl_panel_home.createParallelGroup(Alignment.LEADING)
@@ -80,10 +86,15 @@ public class addproduct extends JPanel {
         this.setLayout(gl_panel_home);
 
 
-        button.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
 
+
+        public void actionPerformed(ActionEvent e){
+            if (e.getSource() == button){
+                Geraet neuesGeraet = new Geraet();
+                neuesGeraet.setMobile();
             }
+
+    }
 
 
     }

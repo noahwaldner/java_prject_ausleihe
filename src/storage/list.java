@@ -9,7 +9,7 @@ public class list {
     ArrayList<produkt> storage = new ArrayList<produkt>();
 
     public list() {
-        geraet prd1 = new geraet();
+        Geraet prd1 = new Geraet();
         prd1.setName("Name1");
         prd1.setDescription("Desc1");
         storage.add(prd1);

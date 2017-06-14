@@ -34,25 +34,24 @@ public class ausleihe extends JPanel implements ActionListener{
         table.setModel(new TableModel());
 
 
-        JPanel bottom = new JPanel();
-        bottom.setLayout(new GridLayout(1,2));
 
-        this.add(bottom, BorderLayout.SOUTH);
 
-        btn_action = new JButton("Ausleihen");
-        bottom.add(btn_action);
+        btn_action = new JButton("Ausleihen / Rückgeben");
+        this.add(btn_action, BorderLayout.SOUTH);
         btn_action.addActionListener(this);
 
-        btn_update = new JButton("Update");
-        bottom.add(btn_update);
-        btn_update.addActionListener(this);
+
 
     }
 
 
         public void actionPerformed(ActionEvent e){
             if (e.getSource() == btn_action){
-                ((TableModel)table.getModel()).getObjectbyIndex(table.getSelectedRow());
+                if (table.getSelectedRow() != -1){
+                    ((TableModel)table.getModel()).getObjectbyIndex(table.getSelectedRow());
+
+                }
+
             }
         }
 
