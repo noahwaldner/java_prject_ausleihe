@@ -12,17 +12,20 @@ import java.awt.event.ActionListener;
 /**
  * Created by Noah Waldner on 19.05.2017.
  */
-public class addproduct extends JPanel implements ActionListener{
+
+public class AddProduct extends JPanel implements ActionListener{
     private JTextField titeltext;
     private JTextField herstellertext;
     private JTextField textField_2;
     private JTextField textField_3;
     private JButton bttn_addgerät;
+
+
     ProdManagement prodmanagement;
 
 
 
-    public addproduct() {
+    public AddProduct() {
 
 
         this.setBounds(244, 0, 600, 621);

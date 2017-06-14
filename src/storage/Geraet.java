@@ -1,11 +1,9 @@
 package storage;
 
-import java.util.Date;
-
 /**
  * Created by aprentas on 19.05.2017.
  */
-public class Geraet extends produkt {
+public class Geraet extends Produkt {
 
     private boolean mobile;
 

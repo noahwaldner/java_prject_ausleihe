@@ -12,14 +12,14 @@ import static com.sun.xml.internal.fastinfoset.alphabet.BuiltInRestrictedAlphabe
 /**
  * Created by Noah Waldner on 19.05.2017.
  */
-public class ausleihe extends JPanel implements ActionListener{
+public class Ausleihe extends JPanel implements ActionListener{
 
     JButton btn_action;
     JTable table;
 
 
 
-    public ausleihe() {
+    public Ausleihe() {
 
 
         this.setBounds(244, 0, 656, 600);
@@ -48,7 +48,7 @@ public class ausleihe extends JPanel implements ActionListener{
         public void actionPerformed(ActionEvent e){
             if (e.getSource() == btn_action){
                 if (table.getSelectedRow() != -1){
-                    ((TableModel)table.getModel()).getObjectbyIndex(table.getSelectedRow());
+                    ((TableModel)table.getModel()).ausleiheByIndex(table.getSelectedRow());
 
                 }
 

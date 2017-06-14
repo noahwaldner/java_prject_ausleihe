@@ -3,7 +3,7 @@ package storage;
 /**
  * Created by Noah Waldner on 19.05.2017.
  */
-public class zubehoer extends produkt {
+public class Zubehoer extends Produkt {
     private String zugehörig;
 
     public String getZugehörig() {

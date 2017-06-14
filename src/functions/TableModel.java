@@ -7,6 +7,7 @@ package functions;
 
 
 import storage.List;
+import storage.Produkt;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -20,8 +21,13 @@ import javax.swing.table.DefaultTableModel;
  */
 public class TableModel extends DefaultTableModel {
     List llist = List.getInstance();
-    private ArrayList<storage.produkt> list = llist.getAll();
+    private ArrayList<Produkt> list = llist.getAll();
     String[] columnNames = {"Name", "Beschreibung", "Ausgeliehen"};
+    ProdManagement prodmanagement;
+
+    public TableModel(){
+        prodmanagement = new ProdManagement();
+    }
 
 
 
@@ -100,7 +106,7 @@ public class TableModel extends DefaultTableModel {
     @Override
     public Object getValueAt(int row, int column) {
         if (this.list.size() > row && row >= 0) {
-            storage.produkt object = null;
+            Produkt object = null;
             object = this.list.get(row);
             switch (column) {
 		case 0:
@@ -123,8 +129,16 @@ public class TableModel extends DefaultTableModel {
 	    this.fireTableDataChanged();
 
 }
-    public void getObjectbyIndex(int index){
+    public void ausleiheByIndex(int index){
         this.list.get(index).ausleiheRuckgabe();
+        reloadList();
+
+
+    }
+
+    public void loeschenByIndex(int index){
+        prodmanagement.removeObject(this.list.get(index));
+        System.out.println("Passed Model");
         reloadList();
 
 

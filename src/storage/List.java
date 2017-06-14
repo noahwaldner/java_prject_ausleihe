@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Created by noah on 14.06.17.
  */
 public class List {
-    ArrayList<produkt> storage = new ArrayList<produkt>();
+    ArrayList<Produkt> storage = new ArrayList<Produkt>();
 
     private static List ourInstance = new List();
 
@@ -21,10 +21,13 @@ public class List {
         storage.add(prd1);
     }
 
-    public void addobject(produkt neuesprodukt) {
+    public void addobject(Produkt neuesprodukt) {
         storage.add(neuesprodukt);
         System.out.println("added");
     };
-    public void removeobject(int id) {/*To Do*/};
-    public ArrayList<produkt> getAll() {return storage;};
+    public void removeobject(Produkt object) {
+        storage.remove(object);
+        System.out.println("Removed");
+    };
+    public ArrayList<Produkt> getAll() {return storage;};
 }
