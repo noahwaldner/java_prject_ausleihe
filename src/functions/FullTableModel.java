@@ -1,7 +1,9 @@
 package functions;
 
+import storage.Geraet;
 import storage.List;
 import storage.Produkt;
+import storage.Zubehoer;
 
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
@@ -48,9 +50,16 @@ public class FullTableModel extends DefaultTableModel {
                 case 1:
                     return String.class;
                 case 2:
-                    return boolean.class;
+                    return String.class;
                 case 3:
                     return Date.class;
+                case 4:
+                    return String.class;
+                case 5:
+                    return String.class;
+                case 6:
+                    return String.class;
+
 
             }
             return null;
@@ -106,7 +115,38 @@ public class FullTableModel extends DefaultTableModel {
                     case 1:
                         return object.getDescription(); //Date
                     case 2:
-                        return object.getAusgeliehen(); //boolean
+                        return object.getHersteller(); //boolean
+                    case 3:
+                        return object.getAnschaffungsdatum(); //boolean
+                    case 4:
+                        if (object instanceof Geraet){
+                            if (((Geraet)object).getMobile()){
+                                return "Mobiles Gerät";
+                            }
+                                else{
+                                return "Festes Gerät";
+                            }
+                        }
+                        else {
+                            return "Zubehör";
+                        }
+
+
+                    case 5:
+                        if (object instanceof Zubehoer){
+                            return ((Zubehoer)object).getZugehoerig();
+                        }
+                        else {return "";}
+
+                    case 6:
+                        if (object.getAusgeliehen()){
+                            return "ausgeliehen";
+                        }
+                        else{
+                            return "Verfügbar";
+                        }
+
+
 
                 }
             }

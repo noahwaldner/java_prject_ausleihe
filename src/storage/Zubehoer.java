@@ -6,7 +6,7 @@ package storage;
 public class Zubehoer extends Produkt {
     private String zugehörig;
 
-    public String getZugehörig() {
+    public String getZugehoerig() {
         return zugehörig;
     }
 
