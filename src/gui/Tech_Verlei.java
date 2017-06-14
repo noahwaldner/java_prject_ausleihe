@@ -76,7 +76,7 @@ public class Tech_Verlei extends JFrame implements ActionListener {
 
         btn_close = new JButton("Beenden");
         btn_close.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btn_inventar = new JButton(" ");
+        btn_inventar = new JButton("Inventar");
         btn_inventar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btn_ausleihe = new JButton("Ausleihen/R\u00FCckgabe");
         btn_löschen = new JButton("löschen");
