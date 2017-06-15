@@ -1,14 +1,19 @@
 package functions;
 
+
 import storage.List;
 import storage.Produkt;
 
 import javax.swing.*;
 
+import storage.Produkt;
+
+
 /**
  * Created by noah on 24.05.17.
  */
 public class ProdManagement {
+
 
     List list = List.getInstance();
 
@@ -25,6 +30,11 @@ public class ProdManagement {
         }
 
     };
+
+    public void ausleihen(int id){};
+
+
+
 
 
 }

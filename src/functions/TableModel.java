@@ -7,6 +7,10 @@ package functions;
 
 
 import storage.List;
+
+import javax.swing.table.DefaultTableModel;
+import storage.List;
+import storage.ProductList;
 import storage.Produkt;
 
 import java.util.ArrayList;
@@ -19,6 +23,7 @@ import javax.swing.table.DefaultTableModel;
  * @version 1.0
  * @author Roger
  */
+
 public class TableModel extends DefaultTableModel {
     List llist = List.getInstance();
     private ArrayList<Produkt> list = llist.getAll();
@@ -28,7 +33,6 @@ public class TableModel extends DefaultTableModel {
     public TableModel(){
         prodmanagement = new ProdManagement();
     }
-
 
 
 

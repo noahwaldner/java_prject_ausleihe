@@ -64,11 +64,19 @@ public class Tech_Verlei extends JFrame implements ActionListener {
         Sidepanel.setBackground(new Color(119, 136, 153));
 
 
+
         add = new AddProduct();
         löschen = new RemoveProduct();
         ausleihe = new Ausleihe();
         all = new All();
         home = new Home();
+
+        add = new AddProduct();
+        löschen = new RemoveProduct();
+        ausleihe = new Ausleihe();
+        all = new All();
+        home = new Home();
+
 
 
         contentPane.add(home);
