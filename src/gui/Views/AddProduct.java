@@ -2,25 +2,47 @@ package gui.Views;
 
 import functions.ProdManagement;
 import storage.Geraet;
+import storage.ProductList;
+import storage.Zubehoer;
 
 import javax.swing.*;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Date;
 
 /**
  * Created by Noah Waldner on 19.05.2017.
  */
 
 public class AddProduct extends JPanel implements ActionListener{
-    private JTextField titeltext;
-    private JTextField herstellertext;
-    private JTextField textField_2;
-    private JTextField textField_3;
-    private JButton bttn_addgerät;
+
+/*Geräte erstellung*/
+    private JTextField input_geraetTitel;
+    private JTextField Input_geraetHersteller;
+    private JCheckBox checkBox_geraetMobileDevice;
+    private JLabel lbl_geraetHersteller;
+    private JLabel lbl_geraetTitel;
+    private JLabel lbl_geraetBeschreibung;
+    private JTextArea input_geraetBeschreibung;
+    private JButton bttn_addgeraet;
+
+
+
+/*Zubehörerstellung*/
+    private JTextField input_zubehoerZugehörigkeit;
+    private JTextField input_zubehoerHerrsteller;
+    private JLabel lbl_zubehoerBeschreibung;
+    private JTextArea input_zubehoerBeschreibung;
+    private JLabel lbl_hersteller;
+    private JTextField input_zubehoerHersteller;
+    private JLabel lbl_zubehoerTitel;
+    private JLabel lbl_zubehoerZugehoerigkeit;
     private JButton bttn_addzubehoer;
-    private JTextField textField;
+
+
+
 
 
     ProdManagement prodmanagement;
@@ -57,26 +79,33 @@ public class AddProduct extends JPanel implements ActionListener{
         JPanel panel = new JPanel();
         tabbedPane.addTab("Zubeh\u00f6r", null, panel, null);
 
-        JLabel lbl_zugehoer = new JLabel("Zugehörigkeit:");
+        lbl_zubehoerZugehoerigkeit = new JLabel("Zugehörigkeit:");
 
-        textField_2 = new JTextField();
-        textField_2.setToolTipText("Titel des Produktes");
-        textField_2.setColumns(10);
+        input_zubehoerZugehörigkeit = new JTextField();
+        input_zubehoerZugehörigkeit.setToolTipText("Titel des Produktes");
+        input_zubehoerZugehörigkeit.setColumns(10);
 
 
-        JLabel lbl_titel = new JLabel("Herrsteller:");
+        lbl_zubehoerTitel = new JLabel("Herrsteller:");
 
-        textField_3 = new JTextField();
-        textField_3.setColumns(10);
+        input_zubehoerHerrsteller = new JTextField();
+        input_zubehoerHerrsteller.setColumns(10);
 
-        JLabel label_2 = new JLabel("Beschreibung:");
+        lbl_zubehoerBeschreibung = new JLabel("Beschreibung:");
 
-        JTextArea textArea_1 = new JTextArea();
-        textArea_1.setBorder(UIManager.getBorder("TextField.border"));
+        input_zubehoerBeschreibung = new JTextArea();
+        input_zubehoerBeschreibung.setBorder(UIManager.getBorder("TextField.border"));
 
-        bttn_addzubehoer = new JButton("add");
+        bttn_addzubehoer = new JButton("add Zubehör");
         bttn_addzubehoer.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                System.out.println("Button add Zubehör hinzugefügt");
+                Zubehoer neuesZubehoer = new Zubehoer();
+                neuesZubehoer.setZugehörig(input_zubehoerZugehörigkeit.getText());
+                neuesZubehoer.setAnschaffungsdatum(new Date());
+                neuesZubehoer.setDescription(input_zubehoerBeschreibung.getText());
+                neuesZubehoer.setHersteller(input_zubehoerHersteller.getText());
+                neuesZubehoer.setName(input_zubehoerHerrsteller.getText());
 
             }
         });
@@ -84,39 +113,41 @@ public class AddProduct extends JPanel implements ActionListener{
 
         /*Hier wird das Panel fürs Zubehör erstellt*/
 
-        textField = new JTextField();
-        textField.setColumns(10);
+        input_zubehoerHersteller = new JTextField();
+        input_zubehoerHersteller.setColumns(10);
 
-        JLabel lbl_hersteller = new JLabel("Hersteller:");
+        lbl_hersteller = new JLabel("Hersteller:");
         GroupLayout gl_panel = new GroupLayout(panel);
         gl_panel.setHorizontalGroup(
-                gl_panel.createParallelGroup(Alignment.LEADING)
+                gl_panel.createParallelGroup(Alignment.TRAILING)
                         .addGroup(gl_panel.createSequentialGroup()
                                 .addGap(14)
                                 .addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
                                         .addGroup(gl_panel.createSequentialGroup()
-                                                .addComponent(lbl_titel, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(lbl_zubehoerTitel, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
                                                 .addContainerGap())
                                         .addGroup(gl_panel.createSequentialGroup()
                                                 .addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
                                                         .addGroup(gl_panel.createSequentialGroup()
-                                                                .addComponent(label_2, GroupLayout.PREFERRED_SIZE, 88, GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(lbl_zubehoerBeschreibung, GroupLayout.PREFERRED_SIZE, 88, GroupLayout.PREFERRED_SIZE)
                                                                 .addPreferredGap(ComponentPlacement.RELATED)
-                                                                .addComponent(textArea_1, GroupLayout.DEFAULT_SIZE, 387, Short.MAX_VALUE))
+                                                                .addComponent(input_zubehoerBeschreibung, GroupLayout.DEFAULT_SIZE, 387, Short.MAX_VALUE))
                                                         .addGroup(gl_panel.createSequentialGroup()
                                                                 .addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
                                                                         .addGroup(gl_panel.createSequentialGroup()
                                                                                 .addComponent(lbl_hersteller, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
                                                                                 .addGap(28))
                                                                         .addGroup(gl_panel.createSequentialGroup()
-                                                                                .addComponent(lbl_zugehoer)
+                                                                                .addComponent(lbl_zubehoerZugehoerigkeit)
                                                                                 .addPreferredGap(ComponentPlacement.RELATED)))
                                                                 .addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-                                                                        .addComponent(textField, GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)
-                                                                        .addComponent(textField_2, GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)
-                                                                        .addComponent(textField_3, GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE))))
+                                                                        .addComponent(input_zubehoerHersteller, GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)
+                                                                        .addComponent(input_zubehoerHerrsteller, GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)
+                                                                        .addGroup(gl_panel.createSequentialGroup()
+                                                                                .addPreferredGap(ComponentPlacement.RELATED)
+                                                                                .addComponent(input_zubehoerZugehörigkeit, GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)))))
                                                 .addContainerGap(72, GroupLayout.PREFERRED_SIZE))))
-                        .addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
+                        .addGroup(gl_panel.createSequentialGroup()
                                 .addContainerGap(359, Short.MAX_VALUE)
                                 .addComponent(bttn_addzubehoer, GroupLayout.PREFERRED_SIZE, 202, GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap())
@@ -124,24 +155,27 @@ public class AddProduct extends JPanel implements ActionListener{
         gl_panel.setVerticalGroup(
                 gl_panel.createParallelGroup(Alignment.TRAILING)
                         .addGroup(gl_panel.createSequentialGroup()
-                                .addGap(32)
+                                .addGap(37)
+                                .addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
+                                        .addGroup(gl_panel.createSequentialGroup()
+                                                .addComponent(lbl_zubehoerZugehoerigkeit)
+                                                .addGap(18))
+                                        .addGroup(gl_panel.createSequentialGroup()
+                                                .addComponent(input_zubehoerZugehörigkeit, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(ComponentPlacement.RELATED)))
                                 .addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
-                                        .addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lbl_zugehoer))
+                                        .addComponent(lbl_zubehoerTitel)
+                                        .addComponent(input_zubehoerHerrsteller, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                                 .addGap(18)
                                 .addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
-                                        .addComponent(lbl_titel)
-                                        .addComponent(textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                .addGap(18)
-                                .addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
-                                        .addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(input_zubehoerHersteller, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(lbl_hersteller))
                                 .addGap(18)
                                 .addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-                                        .addComponent(label_2)
+                                        .addComponent(lbl_zubehoerBeschreibung)
                                         .addGroup(gl_panel.createSequentialGroup()
                                                 .addGap(8)
-                                                .addComponent(textArea_1, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE)))
+                                                .addComponent(input_zubehoerBeschreibung, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE)))
                                 .addGap(145)
                                 .addComponent(bttn_addzubehoer, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE)
                                 .addGap(43))
@@ -151,30 +185,43 @@ public class AddProduct extends JPanel implements ActionListener{
         JPanel panel_1 = new JPanel();
         tabbedPane.addTab("Gerät", null, panel_1, null);
 
-        JLabel lbltitle = new JLabel("Titel:");
+        lbl_geraetTitel = new JLabel("Titel:");
 
-        titeltext = new JTextField();
-        titeltext.setToolTipText("Titel des Produktes");
-        titeltext.setColumns(10);
+        input_geraetTitel = new JTextField();
+        input_geraetTitel.setToolTipText("Titel des Produktes");
+        input_geraetTitel.setColumns(10);
 
-        JCheckBox chckbxMobileDevice = new JCheckBox("Mobile Device ?");
+        checkBox_geraetMobileDevice = new JCheckBox("Mobile Device ?");
 
-        JLabel lblhersteller = new JLabel("Hersteller:");
+        lbl_geraetHersteller = new JLabel("Hersteller:");
 
-        herstellertext = new JTextField();
-        herstellertext.setColumns(10);
+        Input_geraetHersteller = new JTextField();
+        Input_geraetHersteller.setColumns(10);
 
-        JLabel lblBeschreibung = new JLabel("Beschreibung:");
+        lbl_geraetBeschreibung = new JLabel("Beschreibung:");
 
-        JTextArea textArea = new JTextArea();
-        textArea.setBorder(UIManager.getBorder("TextField.border"));
+        input_geraetBeschreibung = new JTextArea();
+        input_geraetBeschreibung.setBorder(UIManager.getBorder("TextField.border"));
 
-        bttn_addgerät = new JButton("add");
-        bttn_addgerät.addActionListener(new ActionListener() {
+        bttn_addgeraet = new JButton("add");
+        bttn_addgeraet.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                System.out.println("Button Gerät hinzufügen");
+                Geraet neuesGeraet = new Geraet();
+                neuesGeraet.setAnschaffungsdatum(new Date());
+                neuesGeraet.setDescription(input_geraetBeschreibung.getText());
+                neuesGeraet.setHersteller(Input_geraetHersteller.getText());
+                neuesGeraet.setName(input_geraetTitel.getText());
+                neuesGeraet.setis_prod();
+                prodmanagement.addObject(neuesGeraet);
+
 
             }
         });
+
+
+
+
 
 
 
@@ -185,24 +232,24 @@ public class AddProduct extends JPanel implements ActionListener{
                 gl_panel_1.createParallelGroup(Alignment.TRAILING)
                         .addGroup(gl_panel_1.createSequentialGroup()
                                 .addContainerGap(359, Short.MAX_VALUE)
-                                .addComponent(bttn_addgerät, GroupLayout.PREFERRED_SIZE, 202, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(bttn_addgeraet, GroupLayout.PREFERRED_SIZE, 202, GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap())
                         .addGroup(Alignment.LEADING, gl_panel_1.createSequentialGroup()
                                 .addGap(24)
                                 .addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING, false)
-                                        .addComponent(chckbxMobileDevice)
-                                        .addComponent(lblBeschreibung)
+                                        .addComponent(checkBox_geraetMobileDevice)
+                                        .addComponent(lbl_geraetBeschreibung)
                                         .addGroup(gl_panel_1.createSequentialGroup()
                                                 .addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
-                                                        .addComponent(lblhersteller)
-                                                        .addComponent(lbltitle))
+                                                        .addComponent(lbl_geraetHersteller)
+                                                        .addComponent(lbl_geraetTitel))
                                                 .addGap(54)
                                                 .addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING, false)
-                                                        .addComponent(titeltext)
-                                                        .addComponent(herstellertext, GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE)))
+                                                        .addComponent(input_geraetTitel)
+                                                        .addComponent(Input_geraetHersteller, GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE)))
                                         .addGroup(gl_panel_1.createSequentialGroup()
                                                 .addGap(105)
-                                                .addComponent(textArea)))
+                                                .addComponent(input_geraetBeschreibung)))
                                 .addContainerGap(51, Short.MAX_VALUE))
         );
         gl_panel_1.setVerticalGroup(
@@ -210,24 +257,24 @@ public class AddProduct extends JPanel implements ActionListener{
                         .addGroup(gl_panel_1.createSequentialGroup()
                                 .addGap(32)
                                 .addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
-                                        .addComponent(lbltitle)
-                                        .addComponent(titeltext, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(lbl_geraetTitel)
+                                        .addComponent(input_geraetTitel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                                 .addGap(18)
                                 .addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
-                                        .addComponent(lblhersteller)
-                                        .addComponent(herstellertext, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(lbl_geraetHersteller)
+                                        .addComponent(Input_geraetHersteller, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                                 .addGap(18)
-                                .addComponent(chckbxMobileDevice)
+                                .addComponent(checkBox_geraetMobileDevice)
                                 .addGap(18)
                                 .addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
                                         .addGroup(Alignment.TRAILING, gl_panel_1.createSequentialGroup()
                                                 .addGap(46)
-                                                .addComponent(textArea, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(input_geraetBeschreibung, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
-                                                .addComponent(bttn_addgerät, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(bttn_addgeraet, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
                                         .addGroup(gl_panel_1.createSequentialGroup()
                                                 .addGap(38)
-                                                .addComponent(lblBeschreibung)))
+                                                .addComponent(lbl_geraetBeschreibung)))
                                 .addContainerGap())
         );
         panel_1.setLayout(gl_panel_1);
@@ -235,20 +282,14 @@ public class AddProduct extends JPanel implements ActionListener{
 
     }
     public void actionPerformed(ActionEvent e){
-            if (e.getSource() == bttn_addgerät){
-                Geraet neuesGeraet = new Geraet();
-                neuesGeraet.setMobile(true);
-                neuesGeraet.setName("new Added");
-                prodmanagement.addObject(neuesGeraet);
-                System.out.println("button pressed");
+        if (e.getSource() == bttn_addgeraet){
+            //Geraet neuesGeraet = new Geraet();
+            //neuesGeraet.setMobile(true);
+            //neuesGeraet.setName("new Added");
+            //prodmanagement.addObject(neuesGeraet);
+            System.out.println("button psdgressed");
 
-            }
-        if (e.getSource() == bttn_addzubehoer){
-            Geraet neuesGeraet = new Geraet();
-            neuesGeraet.setMobile(true);
-            neuesGeraet.setName("new Added");
-            prodmanagement.addObject(neuesGeraet);
-            System.out.println("button pressed");
+        }
 
 
 
@@ -256,5 +297,4 @@ public class AddProduct extends JPanel implements ActionListener{
     }
 
 
-}
 }
