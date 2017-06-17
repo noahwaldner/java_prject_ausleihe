@@ -191,7 +191,7 @@ public class AddProduct extends JPanel implements ActionListener{
         input_geraetTitel.setToolTipText("Titel des Produktes");
         input_geraetTitel.setColumns(10);
 
-        checkBox_geraetMobileDevice = new JCheckBox("Mobile Device ?");
+        checkBox_geraetMobileDevice = new JCheckBox("Mobile Device?");
 
         lbl_geraetHersteller = new JLabel("Hersteller:");
 
