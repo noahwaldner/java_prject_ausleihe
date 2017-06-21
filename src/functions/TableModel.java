@@ -118,9 +118,15 @@ public class TableModel extends DefaultTableModel {
 		case 1:
 		    return object.getDescription(); //Date
         case 2:
-            return object.getAusgeliehen(); //boolean
+            if (object.getAusgeliehen()){
+                return "ausgeliehen";
+            }
+            else{
+                return "Verfügbar";
+            }
 
-	    }
+
+            }
 	}
 	return null;
     }

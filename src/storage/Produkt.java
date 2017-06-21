@@ -66,6 +66,6 @@ public class Produkt {
         return description;
     }
 
-    public boolean setis_prod() { return is_prod;}
+    public boolean setis_prod(boolean is_prod) { return is_prod;}
 
 }

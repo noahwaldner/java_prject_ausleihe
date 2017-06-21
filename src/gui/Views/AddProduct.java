@@ -16,9 +16,9 @@ import java.util.Date;
  * Created by Noah Waldner on 19.05.2017.
  */
 
-public class AddProduct extends JPanel implements ActionListener{
+public class AddProduct extends JPanel implements ActionListener {
 
-/*Geräte erstellung*/
+    /*Geräte erstellung*/
     private JTextField input_geraetTitel;
     private JTextField Input_geraetHersteller;
     private JCheckBox checkBox_geraetMobileDevice;
@@ -29,8 +29,7 @@ public class AddProduct extends JPanel implements ActionListener{
     private JButton bttn_addgeraet;
 
 
-
-/*Zubehörerstellung*/
+    /*Zubehörerstellung*/
     private JTextField input_zubehoerZugehörigkeit;
     private JTextField input_zubehoerHerrsteller;
     private JLabel lbl_zubehoerBeschreibung;
@@ -42,14 +41,12 @@ public class AddProduct extends JPanel implements ActionListener{
     private JButton bttn_addzubehoer;
 
 
-
-
-
     ProdManagement prodmanagement;
 
 
-
     public AddProduct() {
+
+        prodmanagement = new ProdManagement();
 
 
         this.setBounds(244, 0, 600, 621);
@@ -75,6 +72,11 @@ public class AddProduct extends JPanel implements ActionListener{
                                 .addComponent(tabbedPane, GroupLayout.PREFERRED_SIZE, 543, GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(48, Short.MAX_VALUE))
         );
+
+
+
+        //Zubehör
+
 
         JPanel panel = new JPanel();
         tabbedPane.addTab("Zubeh\u00f6r", null, panel, null);
@@ -106,12 +108,12 @@ public class AddProduct extends JPanel implements ActionListener{
                 neuesZubehoer.setDescription(input_zubehoerBeschreibung.getText());
                 neuesZubehoer.setHersteller(input_zubehoerHersteller.getText());
                 neuesZubehoer.setName(input_zubehoerHerrsteller.getText());
+                neuesZubehoer.setis_prod(false);
+                prodmanagement.addObject(neuesZubehoer);
 
             }
         });
 
-
-        /*Hier wird das Panel fürs Zubehör erstellt*/
 
         input_zubehoerHersteller = new JTextField();
         input_zubehoerHersteller.setColumns(10);
@@ -182,6 +184,15 @@ public class AddProduct extends JPanel implements ActionListener{
         );
         panel.setLayout(gl_panel);
 
+
+
+
+
+
+
+
+        //Gerät
+
         JPanel panel_1 = new JPanel();
         tabbedPane.addTab("Gerät", null, panel_1, null);
 
@@ -204,29 +215,11 @@ public class AddProduct extends JPanel implements ActionListener{
         input_geraetBeschreibung.setBorder(UIManager.getBorder("TextField.border"));
 
         bttn_addgeraet = new JButton("add");
-        bttn_addgeraet.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Button Gerät hinzufügen");
-                Geraet neuesGeraet = new Geraet();
-                neuesGeraet.setAnschaffungsdatum(new Date());
-                neuesGeraet.setDescription(input_geraetBeschreibung.getText());
-                neuesGeraet.setHersteller(Input_geraetHersteller.getText());
-                neuesGeraet.setName(input_geraetTitel.getText());
-                neuesGeraet.setis_prod();
-                prodmanagement.addObject(neuesGeraet);
-
-
-            }
-        });
-
-
-
-
-
 
 
 
 /*Hier wird das Panel für das Gerät erstellt*/
+
         GroupLayout gl_panel_1 = new GroupLayout(panel_1);
         gl_panel_1.setHorizontalGroup(
                 gl_panel_1.createParallelGroup(Alignment.TRAILING)
@@ -280,9 +273,38 @@ public class AddProduct extends JPanel implements ActionListener{
         panel_1.setLayout(gl_panel_1);
         this.setLayout(gl_panel_home);
 
+        bttn_addgeraet.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Button Gerät hinzufügen");
+
+                Geraet neuesGeraet = new Geraet();
+                neuesGeraet.setAnschaffungsdatum(new Date());
+                neuesGeraet.setDescription(input_geraetBeschreibung.getText());
+                neuesGeraet.setHersteller(Input_geraetHersteller.getText());
+                neuesGeraet.setName(input_geraetTitel.getText());
+                neuesGeraet.setMobile(checkBox_geraetMobileDevice.isSelected());
+                neuesGeraet.setis_prod(true);
+                prodmanagement.addObject(neuesGeraet);
+
+
+            }
+        });
+
     }
-    public void actionPerformed(ActionEvent e){
-        if (e.getSource() == bttn_addgeraet){
+
+
+
+
+
+
+
+
+
+
+
+
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == bttn_addgeraet) {
             //Geraet neuesGeraet = new Geraet();
             //neuesGeraet.setMobile(true);
             //neuesGeraet.setName("new Added");
@@ -290,8 +312,6 @@ public class AddProduct extends JPanel implements ActionListener{
             System.out.println("button psdgressed");
 
         }
-
-
 
 
     }
