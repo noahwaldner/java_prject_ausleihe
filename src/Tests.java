@@ -1,5 +1,8 @@
+import dto.Geraet;
 import dto.Produkt;
+import dto.Zubehoer;
 import functions.ProdManagement;
+import jdk.nashorn.internal.ir.IfNode;
 import org.hamcrest.core.IsEqual;
 import org.hamcrest.core.IsNot;
 import org.junit.Assert;
@@ -14,9 +17,11 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import storage.List;
+import sun.tools.tree.IfStatement;
 
 
 import javax.swing.*;
+import java.util.ArrayList;
 import java.util.Date;
 
 import static junit.framework.TestCase.assertEquals;
@@ -37,14 +42,16 @@ public class Tests {
     @Test
     public void Testfall_I(){
         Date anschDate = new Date();
-        Produkt testProdukt = new Produkt();
+        Geraet testProdukt = new Geraet();
         testProdukt.setAnschaffungsdatum(anschDate);
+        testProdukt.setMobile(true);
         testProdukt.setDescription("hallo");
         testProdukt.setHersteller("good one");
         testProdukt.setis_prod(true);
         testProdukt.setName("Testname");
         assertEquals(testProdukt.getAnschaffungsdatum(), anschDate);
         assertEquals(testProdukt.getHersteller(),"good one");
+        assertEquals(testProdukt.getMobile(),true);
         ProdManagement management = new ProdManagement();
         management.addObject(testProdukt);
 
@@ -56,13 +63,15 @@ public class Tests {
     @Test
     public void Testfall_II(){
         Date anschDate = new Date();
-        Produkt testProdukt = new Produkt();
+        Zubehoer testProdukt = new Zubehoer();
+        testProdukt.setZugehörig("XXX");
         testProdukt.setAnschaffungsdatum(anschDate);
         testProdukt.setName("Testname");
         testProdukt.setDescription("hallo");
         testProdukt.setHersteller("good one");
         testProdukt.setis_prod(true);
         Assert.assertThat(testProdukt.getHersteller(), IsNot.not(IsEqual.equalTo("")));
+        assertEquals(testProdukt.getZugehoerig(), "XXX");
         ProdManagement management = new ProdManagement();
         management.addObject(testProdukt);
         assertEquals(testProdukt.getAusgeliehen(), false );
@@ -86,6 +95,21 @@ public class Tests {
         testProdukt.ausleiheRuckgabe();
         Assert.assertThat(testProdukt.getAusgeliehen(), IsNot.not(IsEqual.equalTo(true)));
     }
+    @Test
+    public void Testfall_V(){
+        Produkt testProdukt = new Produkt();
+        List list = List.getInstance();
+
+        ArrayList<Produkt> storage= list.getAll();
+
+
+        ProdManagement manage = new ProdManagement();
+        manage.addObject(testProdukt);
+        assertEquals(storage.contains(testProdukt), true);
+        manage.removeObject(testProdukt);
+        assertEquals(storage.contains(testProdukt), false);
+    }
+
 
 
 
