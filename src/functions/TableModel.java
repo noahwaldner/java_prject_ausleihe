@@ -9,19 +9,18 @@ package functions;
 import storage.List;
 
 import javax.swing.table.DefaultTableModel;
-import storage.List;
-import storage.ProductList;
-import storage.Produkt;
+
+import dto.Produkt;
 
 import java.util.ArrayList;
 import java.util.Date;
-import javax.swing.table.DefaultTableModel;
 
 /**
  * Tablemodel um die JTable der Bestellungsheaders
  *
  * @version 1.0
- * @author Roger
+ * @author Noah Waldner
+ * @version 1.0
  */
 
 public class TableModel extends DefaultTableModel {

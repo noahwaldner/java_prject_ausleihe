@@ -1,9 +1,8 @@
 package gui.Views;
 
 import functions.ProdManagement;
-import storage.Geraet;
-import storage.ProductList;
-import storage.Zubehoer;
+import dto.Geraet;
+import dto.Zubehoer;
 
 import javax.swing.*;
 import javax.swing.GroupLayout.Alignment;
@@ -13,7 +12,9 @@ import java.awt.event.ActionListener;
 import java.util.Date;
 
 /**
- * Created by Noah Waldner on 19.05.2017.
+ * Diese Klasse stellt eine View dar in welcher man Produkte zum System hinzufügen kann.
+ * @author Etienne Roulet, Noah Waldner
+ * @version 1.0
  */
 
 public class AddProduct extends JPanel implements ActionListener {
@@ -37,13 +38,17 @@ public class AddProduct extends JPanel implements ActionListener {
     private JLabel lbl_hersteller;
     private JTextField input_zubehoerHersteller;
     private JLabel lbl_zubehoerTitel;
+    private JTextField input_zubehoerTitel;
+    private JLabel lbl_zubehoerHersteller;
     private JLabel lbl_zubehoerZugehoerigkeit;
     private JButton bttn_addzubehoer;
 
 
     ProdManagement prodmanagement;
 
-
+    /**
+     * Der Konstruktor baut die View zusammen.
+     */
     public AddProduct() {
 
         prodmanagement = new ProdManagement();
@@ -51,7 +56,7 @@ public class AddProduct extends JPanel implements ActionListener {
 
         this.setBounds(244, 0, 600, 621);
 
-        JLabel lblNewLabel_2 = new JLabel("New label");
+        JLabel lblNewLabel_2 = new JLabel("      Inventarisierung");
 
         JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
         GroupLayout gl_panel_home = new GroupLayout(this);
@@ -88,7 +93,12 @@ public class AddProduct extends JPanel implements ActionListener {
         input_zubehoerZugehörigkeit.setColumns(10);
 
 
-        lbl_zubehoerTitel = new JLabel("Herrsteller:");
+        lbl_zubehoerTitel = new JLabel("Name:");
+
+        input_zubehoerTitel = new JTextField();
+        input_zubehoerTitel.setColumns(10);
+
+        lbl_zubehoerHersteller = new JLabel("Hersteller:");
 
         input_zubehoerHerrsteller = new JTextField();
         input_zubehoerHerrsteller.setColumns(10);
@@ -99,6 +109,11 @@ public class AddProduct extends JPanel implements ActionListener {
         input_zubehoerBeschreibung.setBorder(UIManager.getBorder("TextField.border"));
 
         bttn_addzubehoer = new JButton("add Zubehör");
+
+        /**
+         * Der ActionListener reagiert auf Benutzeraktionen.
+         * @param e Event
+         */
         bttn_addzubehoer.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Button add Zubehör hinzugefügt");
@@ -107,7 +122,7 @@ public class AddProduct extends JPanel implements ActionListener {
                 neuesZubehoer.setAnschaffungsdatum(new Date());
                 neuesZubehoer.setDescription(input_zubehoerBeschreibung.getText());
                 neuesZubehoer.setHersteller(input_zubehoerHersteller.getText());
-                neuesZubehoer.setName(input_zubehoerHerrsteller.getText());
+                neuesZubehoer.setName(input_zubehoerTitel.getText());
                 neuesZubehoer.setis_prod(false);
                 prodmanagement.addObject(neuesZubehoer);
 
@@ -293,16 +308,10 @@ public class AddProduct extends JPanel implements ActionListener {
     }
 
 
-
-
-
-
-
-
-
-
-
-
+    /**
+     * Der ActionListener reagiert auf Benutzeraktionen.
+     * @param e Event
+     */
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == bttn_addgeraet) {
             //Geraet neuesGeraet = new Geraet();

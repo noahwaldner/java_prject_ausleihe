@@ -1,8 +1,4 @@
-package gui; /**
- * Created by Etienne Roulet on 16.05.17.
- * Edited by Noah Waldner on 17.05.17.
- */
-
+package gui;
 import gui.Views.*;
 
 import java.awt.EventQueue;
@@ -23,6 +19,11 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/**
+ * Diese Klasse stellt das JFrame mit dem Menue dar in welchem dann die einzelnen Views geladen werden.
+ * @author Etienne Roulet, Noah Waldner
+ * @version 1.0
+ */
 public class Tech_Verlei extends JFrame implements ActionListener {
 
     private JPanel contentPane;

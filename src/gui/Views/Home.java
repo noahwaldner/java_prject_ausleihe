@@ -3,7 +3,8 @@ package gui.Views;
 import javax.swing.*;
 
 /**
- * Created by Noah Waldner on 19.05.2017.
+ * Die Startview Zeigt ein Bild an.
+ * @Author Etienne Roulet
  */
 public class Home extends JPanel {
 

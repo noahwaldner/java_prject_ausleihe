@@ -7,9 +7,10 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created by Noah Waldner
- * Die Klasse ist die Anzeige von Allen Produkten in der Arraylist.
  *
+ * Die Klasse ist die Anzeige von Allen Produkten in der Arraylist.
+ * @author Noah Waldner
+ * @version 1.0
  */
 public class All extends JPanel {
 

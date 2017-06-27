@@ -1,9 +1,11 @@
-package storage;
+package dto;
 
 import java.util.Date;
 
 /**
- * Created by Noah Waldner on 19.05.2017.
+ * Diese Klasse ist die Elternklasse von "Produkt.java" und "Zubehoer.java" und beinhaltet die Methone welche in beiden Klassen benötigt werden.
+ * @author Noah Waldner
+ * @version 1.0
  */
 public class Produkt {
 
@@ -40,6 +42,10 @@ public class Produkt {
         return ausgeliehen;
     }
 
+
+    /**
+     * Invertiert den Boolean wert ausgeliehen
+     */
     public void ausleiheRuckgabe() {
         if (ausgeliehen == false){
             ausgeliehen = true;

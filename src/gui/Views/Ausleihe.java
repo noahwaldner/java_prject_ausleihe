@@ -10,8 +10,10 @@ import java.awt.event.ActionListener;
 import static com.sun.xml.internal.fastinfoset.alphabet.BuiltInRestrictedAlphabets.table;
 
 /**
- * Created by Noah Waldner on 19.05.2017.
+ *
  * Die Klasse Stellt eine Liste mit allen Produkten dar. Es gibt einen Button mit welchen das gewählte Produkt Ausgeleiht oder zurückgegeben werden kann.
+ * @author Etienne Roulet, Noah Waldner
+ * @version 1.0
  */
 public class Ausleihe extends JPanel implements ActionListener{
 
@@ -19,7 +21,9 @@ public class Ausleihe extends JPanel implements ActionListener{
     JTable table;
 
 
-    //Im Konstruktor wird die View zusammengebaut.
+    /**
+     * Im Konstruktor wird die View zusammengebaut
+     */
     public Ausleihe() {
 
         //Panel Settings
@@ -46,7 +50,10 @@ public class Ausleihe extends JPanel implements ActionListener{
 
     }
 
-        //Ein actionlistener warted auf eine Interkation mit dem Button.
+    /**
+     * Ein actionlistener warted auf eine Interkation mit dem Button.
+     */
+
         public void actionPerformed(ActionEvent e){
             if (e.getSource() == btn_action){
                 //Es wird geprüft ob etwas ausgewählt ist.

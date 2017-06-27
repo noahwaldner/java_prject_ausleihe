@@ -1,16 +1,19 @@
 package functions;
 
-import storage.Geraet;
+import dto.Geraet;
 import storage.List;
-import storage.Produkt;
-import storage.Zubehoer;
+import dto.Produkt;
+import dto.Zubehoer;
 
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 import java.util.Date;
 
 /**
- * Created by noah on 14.06.17.
+ * Diese Klasse ist das Modell für die JTable in der View "alL" es werden jeweils alle Attribute der Objekte angezeigt.
+ *
+ * @author Noah Waldner
+ * @version 1.0
  */
 public class FullTableModel extends DefaultTableModel {
 
@@ -19,7 +22,10 @@ public class FullTableModel extends DefaultTableModel {
         String[] columnNames = {"Name", "Beschreibung", "Hersteller","Anschaffungsdatum", "Art","Zugehoerig","Ausgeliehen"};
         ProdManagement prodmanagement;
 
-        public FullTableModel(){
+    /**
+     * Erstellt ein Objekt der Klasse ProdManagement.
+     */
+    public FullTableModel(){
             prodmanagement = new ProdManagement();
         }
 
@@ -91,7 +97,7 @@ public class FullTableModel extends DefaultTableModel {
          * Gibt an, ob die angegebene Zelle editierbar ist
          * @param row Zeile
          * @param col Spalte
-         * @return true, wenn editierbar, false wenn nicht editierbar
+         * @return false da in dieser Tabelle nichts Editierbar sein soll
          */
         @Override
         public boolean isCellEditable(int row, int col){

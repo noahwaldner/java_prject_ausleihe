@@ -8,7 +8,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Created by noah on 24.05.17.
+ * Diese Klassse Zeigt die View um ein Produkt zu löschen an.
+ * @author Noah Waldner
+ * @version 1.0
+ *
  */
 public class RemoveProduct extends JPanel implements ActionListener{
 
@@ -16,7 +19,9 @@ public class RemoveProduct extends JPanel implements ActionListener{
     JTable table;
 
 
-
+    /**
+     * Der Konstruktor baut die View zusammen.
+     */
     public RemoveProduct() {
 
 
