@@ -77,7 +77,7 @@ public class Tests {
         assertEquals(testProdukt.getAusgeliehen(), false );
 
     }
-
+//Rückgabe eines Artikels wird überprüft
     @Test
     public void Testfall_III(){
         Produkt testProdukt = new Produkt();
@@ -86,7 +86,7 @@ public class Tests {
         testProdukt.ausleiheRuckgabe();
         assertEquals(testProdukt.getAusgeliehen(), false);
     }
-
+//Initialisierung des Geräts wird überprüft
     @Test
     public void Testfall_IV(){
         Produkt testProdukt = new Produkt();
@@ -95,6 +95,7 @@ public class Tests {
         testProdukt.ausleiheRuckgabe();
         Assert.assertThat(testProdukt.getAusgeliehen(), IsNot.not(IsEqual.equalTo(true)));
     }
+    //List test ob Prodkt removed werden kann. Und hinzugefügt
     @Test
     public void Testfall_V(){
         Produkt testProdukt = new Produkt();
