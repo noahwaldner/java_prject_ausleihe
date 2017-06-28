@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="java_project_ausleihe:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/java_project_ausleihe_jar</output-path>
+    <root id="archive" name="java_project_ausleihe.jar">
+      <element id="module-output" name="java_project_ausleihe" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/junit-4.12.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/hamcrest-core-1.3.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

@@ -40,9 +40,8 @@ public class ProdManagement {
 
     };
 
-    public void ausleihen(int id){};
 
-
+ 
 
 
 }
