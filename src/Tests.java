@@ -38,7 +38,9 @@ import java.util.Date;
  */
 
 public class Tests {
-
+    /**
+     * Test ob ein Gerät mit den Atributen hinzugefügt werden kann.
+     */
     @Test
     public void Testfall_I(){
         Date anschDate = new Date();
