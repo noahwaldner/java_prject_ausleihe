@@ -35,7 +35,6 @@ public abstract class Produkt {
         this.description = description;
     }
 
-    public void getis_prod (boolean is_prod) { this.is_prod = is_prod;}
 
 
     public boolean getAusgeliehen() {
