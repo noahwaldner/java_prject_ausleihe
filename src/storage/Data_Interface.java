@@ -11,6 +11,6 @@ import java.util.ArrayList;
  */
 public interface Data_Interface {
     void addobject(Produkt neuesprodukt);
-    void removeobject(int id);
+    void removeobject(Produkt produkt);
     ArrayList<Produkt> getAll();
 }

@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * @author Noah Waldner
  * @version 1.0
  */
-public class List {
+public class List implements Data_Interface{
     ArrayList<Produkt> storage = new ArrayList<Produkt>();
 
     private static List ourInstance = new List();

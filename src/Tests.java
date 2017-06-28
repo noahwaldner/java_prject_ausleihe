@@ -80,7 +80,7 @@ public class Tests {
 //Rückgabe eines Artikels wird überprüft
     @Test
     public void Testfall_III(){
-        Produkt testProdukt = new Produkt();
+        Geraet testProdukt = new Geraet();
         testProdukt.ausleiheRuckgabe();
         assertEquals(testProdukt.getAusgeliehen(), true);
         testProdukt.ausleiheRuckgabe();
@@ -89,7 +89,7 @@ public class Tests {
 //Initialisierung des Geräts wird überprüft
     @Test
     public void Testfall_IV(){
-        Produkt testProdukt = new Produkt();
+        Geraet testProdukt = new Geraet();
         testProdukt.ausleiheRuckgabe();
         Assert.assertThat(testProdukt.getAusgeliehen(), IsNot.not(IsEqual.equalTo(false)));
         testProdukt.ausleiheRuckgabe();
@@ -98,7 +98,7 @@ public class Tests {
     //List test ob Prodkt removed werden kann. Und hinzugefügt
     @Test
     public void Testfall_V(){
-        Produkt testProdukt = new Produkt();
+        Geraet testProdukt = new Geraet();
         List list = List.getInstance();
 
         ArrayList<Produkt> storage= list.getAll();

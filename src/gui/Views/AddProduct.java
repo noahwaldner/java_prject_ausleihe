@@ -130,10 +130,7 @@ public class AddProduct extends JPanel implements ActionListener {
         });
 
 
-        input_zubehoerHersteller = new JTextField();
-        input_zubehoerHersteller.setColumns(10);
 
-        lbl_hersteller = new JLabel("Hersteller:");
         GroupLayout gl_panel = new GroupLayout(panel);
         gl_panel.setHorizontalGroup(
                 gl_panel.createParallelGroup(Alignment.TRAILING)

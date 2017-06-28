@@ -7,7 +7,7 @@ import java.util.Date;
  * @author Noah Waldner
  * @version 1.0
  */
-public class Produkt {
+public abstract class Produkt {
 
 
     private String name;
