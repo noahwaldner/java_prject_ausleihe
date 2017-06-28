@@ -208,7 +208,10 @@ public class Tech_Verlei extends JFrame implements ActionListener {
         setUndecorated(true);
     }
 
-    
+    /**
+     * Action Listener für JPanel laden
+     * param e Event
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
